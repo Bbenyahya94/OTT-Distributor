@@ -5,6 +5,19 @@ const serverNames = [
   "Tivione", "Mega OTT", "Infinity IPTV", "Max OTT", "Nexon IPTV"
 ];
 
+// Convert server name to logo filename (lowercase, replace spaces/parentheses with -)
+function getLogoFilename(name) {
+  let filename = name.toLowerCase()
+    .replace(/[()]/g, '')
+    .replace(/[\s]+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+  // manual corrections for specific cases
+  if (filename === 'dino-iptv-tvplus') filename = 'dino-iptv';
+  if (filename === '8k-strong') filename = '8k-strong';
+  if (filename === 'promax-4k-ott-cobra-ott') filename = 'promax';
+  return filename + '.webp';
+}
+
 function getDescription(name, index) {
   const descMap = {
     "Trex IPTV": "Trex IPTV: 18,000+ live channels, 75,000 movies, 12,000 series. Ultra-stable 4K streaming.",
@@ -51,7 +64,7 @@ function getResellerCredits(index) {
   return base.map(c => ({ credits: c.credits, price: Math.round(c.price * factor) }));
 }
 
-function getIcon(name, idx) {
+function getFallbackIcon(name, idx) {
   const icons = ["fas fa-tv", "fas fa-film", "fas fa-globe", "fas fa-broadcast-tower", "fas fa-server", "fas fa-play-circle", "fas fa-cloud-upload-alt", "fas fa-satellite", "fas fa-video"];
   if (name.includes("4K")) return "fas fa-video";
   if (name.includes("OTT")) return "fas fa-satellite";
@@ -62,12 +75,13 @@ const products = serverNames.map((name, idx) => ({
   id: idx,
   name: name,
   description: getDescription(name, idx),
-  iconClass: getIcon(name, idx),
+  logoFile: getLogoFilename(name),
+  fallbackIcon: getFallbackIcon(name, idx),
   subscriptionPrices: getSubscriptionPrices(idx),
   resellerCredits: getResellerCredits(idx)
 }));
 
-// Render product cards
+// Render product cards with <img> for logo + fallback
 function renderProducts() {
   const grid = document.getElementById('productsGrid');
   if (!grid) return;
@@ -86,7 +100,9 @@ function renderProducts() {
     const card = document.createElement('div');
     card.className = 'product-card';
     card.innerHTML = `
-      <div class="product-logo"><i class="${prod.iconClass}"></i></div>
+      <div class="product-logo" id="logo-${prod.id}">
+        <img src="logos/${prod.logoFile}" alt="${escapeHtml(prod.name)} logo" style="width:100%; height:100%; object-fit:contain;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\\'${prod.fallbackIcon}\\' style=\\'font-size:2.8rem; color:#1b6b5e;\\'></i>';">
+      </div>
       <div class="product-title">${escapeHtml(prod.name)}</div>
       <div class="product-desc">${escapeHtml(prod.description)}</div>
       <div class="price-section">
@@ -101,6 +117,8 @@ function renderProducts() {
     `;
     grid.appendChild(card);
   });
+
+  // Attach Join Now listeners
   document.querySelectorAll('.btn-join').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = parseInt(btn.getAttribute('data-server-id'));
@@ -118,10 +136,9 @@ function escapeHtml(str) {
   });
 }
 
-// Plan modal logic
+// ----- Plan Modal Logic (unchanged, same as before) -----
 let currentServer = null;
 let selectedPlan = null;
-
 const planModal = document.getElementById('planModal');
 const subscriptionOptionsDiv = document.getElementById('subscriptionOptions');
 const creditOptionsDiv = document.getElementById('creditOptions');
@@ -136,7 +153,6 @@ function openPlanModal(serverId) {
   for (const [duration, price] of Object.entries(currentServer.subscriptionPrices)) {
     const div = document.createElement('div');
     div.className = 'plan-option';
-    div.setAttribute('data-type', 'subscription');
     div.innerHTML = `<span><strong>${duration}</strong> : ${price}</span><input type="radio" name="planChoice">`;
     div.addEventListener('click', (e) => {
       document.querySelectorAll('#subscriptionOptions .plan-option, #creditOptions .plan-option').forEach(opt => opt.classList.remove('selected'));
@@ -178,7 +194,7 @@ document.getElementById('submitPlanBtn').addEventListener('click', () => {
   closePlanModal();
 });
 
-// General modal (free trial / reseller)
+// ----- General Modal (Free Trial / Become Reseller) -----
 const generalModal = document.getElementById('generalModal');
 const generalServerSelect = document.getElementById('generalServerSelect');
 let generalAction = 'free_trial';
@@ -221,17 +237,15 @@ document.getElementById('submitGeneralModalBtn').addEventListener('click', () =>
   closeGeneralModal();
 });
 
-// Event listeners for banner buttons
 document.getElementById('freeTrialBtn').addEventListener('click', () => openGeneralModal('free_trial'));
 document.getElementById('becomeResellerBtn').addEventListener('click', () => openGeneralModal('reseller'));
 
-// Close modals when clicking outside
 [planModal, generalModal].forEach(modal => {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.remove('active');
   });
 });
 
-// Initialize everything
+// Initialize
 populateGeneralServerSelect();
 renderProducts();
