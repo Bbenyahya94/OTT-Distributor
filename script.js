@@ -11,127 +11,127 @@ const serverPrices = {
   "Trex IPTV": {
     subscription: { "1 month": "13 €", "3 months": "23 €", "6 months": "33 €", "12 months": "49 €" },
     credits: [
-      { credits: 120, price: 130 },
-      { credits: 240, price: 250 },
-      { credits: 360, price: 370 },
-      { credits: 600, price: 600 }
+      { credits: 120, price: 185 },
+      { credits: 240, price: 365 },
+      { credits: 360, price: 545 },
+      { credits: 600, price: 895 }
     ]
   },
   "8K Strong": {
-    subscription: { "1 month": "15 €", "3 months": "27 €", "6 months": "39 €", "12 months": "59 €" },
+    subscription: { "1 month": "15 €", "3 months": "27 €", "6 months": "37 €", "12 months": "59 €" },
     credits: [
-      { credits: 120, price: 140 },
-      { credits: 240, price: 270 },
-      { credits: 360, price: 400 },
-      { credits: 600, price: 650 }
+      { credits: 120, price: 190 },
+      { credits: 240, price: 375 },
+      { credits: 360, price: 555 },
+      { credits: 600, price: 900 }
     ]
   },
   "Dino IPTV (TVPlus)": {
     subscription: { "1 month": "12 €", "3 months": "22 €", "6 months": "32 €", "12 months": "45 €" },
     credits: [
-      { credits: 120, price: 125 },
-      { credits: 240, price: 240 },
-      { credits: 360, price: 355 },
-      { credits: 600, price: 580 }
+      { credits: 120, price: 110 },
+      { credits: 240, price: 210 },
+      { credits: 360, price: 295 },
+      { credits: 600, price: 480 }
     ]
   },
   "Lion OTT": {
     subscription: { "1 month": "14 €", "3 months": "25 €", "6 months": "36 €", "12 months": "55 €" },
     credits: [
-      { credits: 120, price: 135 },
-      { credits: 240, price: 260 },
-      { credits: 360, price: 385 },
-      { credits: 600, price: 620 }
+      { credits: 10, price: 90 },
+      { credits: 20, price: 170 },
+      { credits: 30, price: 240 },
+      { credits: 50, price: 360 }
     ]
   },
   "Crystal OTT": {
-    subscription: { "1 month": "16 €", "3 months": "29 €", "6 months": "42 €", "12 months": "65 €" },
+    subscription: { "1 month": "10 €", "3 months": "20 €", "6 months": "30 €", "12 months": "45 €" },
     credits: [
-      { credits: 120, price: 145 },
-      { credits: 240, price: 280 },
-      { credits: 360, price: 415 },
-      { credits: 600, price: 670 }
+      { credits: 10, price: 110 },
+      { credits: 20, price: 210 },
+      { credits: 30, price: 299 },
+      { credits: 50, price: 485 }
     ]
   },
   "Magnum OTT": {
-    subscription: { "1 month": "18 €", "3 months": "33 €", "6 months": "48 €", "12 months": "75 €" },
+    subscription: { "1 month": "10 €", "3 months": "25 €", "6 months": "33 €", "12 months": "49 €" },
     credits: [
-      { credits: 120, price: 160 },
-      { credits: 240, price: 310 },
-      { credits: 360, price: 460 },
-      { credits: 600, price: 750 }
+      { credits: 10, price: 135 },
+      { credits: 20, price: 260 },
+      { credits: 30, price: 383 },
+      { credits: 50, price: 625 }
     ]
   },
   "Dream 4K IPTV": {
-    subscription: { "1 month": "17 €", "3 months": "31 €", "6 months": "45 €", "12 months": "70 €" },
+    subscription: { "1 month": "10 €", "3 months": "25 €", "6 months": "33 €", "12 months": "49 €" },
     credits: [
-      { credits: 120, price: 150 },
-      { credits: 240, price: 290 },
-      { credits: 360, price: 430 },
-      { credits: 600, price: 700 }
+      { credits: 120, price: 145 },
+      { credits: 240, price: 280 },
+      { credits: 360, price: 418 },
+      { credits: 600, price: 675 }
     ]
   },
   "Eagle IPTV": {
-    subscription: { "1 month": "11 €", "3 months": "20 €", "6 months": "29 €", "12 months": "42 €" },
+    subscription: { "1 month": "10 €", "3 months": "25 €", "6 months": "33 €", "12 months": "49 €" },
     credits: [
-      { credits: 120, price: 120 },
-      { credits: 240, price: 230 },
-      { credits: 360, price: 340 },
-      { credits: 600, price: 550 }
+      { credits: 120, price: 90 },
+      { credits: 240, price: 175 },
+      { credits: 360, price: 255 },
+      { credits: 600, price: 400 }
     ]
   },
   "Promax (4K OTT, Cobra OTT)": {
-    subscription: { "1 month": "20 €", "3 months": "37 €", "6 months": "54 €", "12 months": "85 €" },
+    subscription: { "1 month": "15 €", "3 months": "27 €", "6 months": "37 €", "12 months": "59 €" },
     credits: [
-      { credits: 120, price: 180 },
-      { credits: 240, price: 350 },
-      { credits: 360, price: 520 },
-      { credits: 600, price: 850 }
+      { credits: 10, price: 190 },
+      { credits: 20, price: 375 },
+      { credits: 30, price: 555 },
+      { credits: 50, price: 900 }
     ]
   },
   "Tivione": {
-    subscription: { "1 month": "10 €", "3 months": "18 €", "6 months": "26 €", "12 months": "38 €" },
+     subscription: { "1 month": "15 €", "3 months": "27 €", "6 months": "37 €", "12 months": "59 €" },
     credits: [
-      { credits: 120, price: 110 },
-      { credits: 240, price: 210 },
-      { credits: 360, price: 310 },
-      { credits: 600, price: 500 }
+      { credits: 10, price: 210 },
+      { credits: 20, price: 410 },
+      { credits: 30, price: 600 },
+      { credits: 50, price: 975 }
     ]
   },
   "Mega OTT": {
-    subscription: { "1 month": "19 €", "3 months": "35 €", "6 months": "51 €", "12 months": "80 €" },
+   subscription: { "1 month": "10 €", "3 months": "25 €", "6 months": "33 €", "12 months": "49 €" },
     credits: [
-      { credits: 120, price: 170 },
-      { credits: 240, price: 330 },
-      { credits: 360, price: 490 },
-      { credits: 600, price: 800 }
+      { credits: 10, price: 95 },
+      { credits: 20, price: 185 },
+      { credits: 30, price: 270 },
+      { credits: 50, price: 434 }
     ]
   },
   "Infinity IPTV": {
-    subscription: { "1 month": "22 €", "3 months": "40 €", "6 months": "58 €", "12 months": "95 €" },
+    subscription: { "1 month": "15 €", "3 months": "27 €", "6 months": "37 €", "12 months": "59 €" },
     credits: [
-      { credits: 120, price: 200 },
-      { credits: 240, price: 390 },
-      { credits: 360, price: 580 },
-      { credits: 600, price: 950 }
+      { credits: 10, price: 210 },
+      { credits: 20, price: 410 },
+      { credits: 30, price: 600 },
+      { credits: 50, price: 975 }
     ]
   },
   "Max OTT": {
-    subscription: { "1 month": "21 €", "3 months": "38 €", "6 months": "55 €", "12 months": "88 €" },
+   subscription: { "1 month": "10 €", "3 months": "25 €", "6 months": "33 €", "12 months": "49 €" },
     credits: [
-      { credits: 120, price: 190 },
-      { credits: 240, price: 370 },
-      { credits: 360, price: 550 },
-      { credits: 600, price: 900 }
+      { credits: 10, price: 135 },
+      { credits: 20, price: 260 },
+      { credits: 30, price: 383 },
+      { credits: 50, price: 625 }
     ]
   },
   "Nexon IPTV": {
-    subscription: { "1 month": "14 €", "3 months": "26 €", "6 months": "37 €", "12 months": "57 €" },
+    subscription: { "1 month": "12 €", "3 months": "22 €", "6 months": "32 €", "12 months": "45 €" },
     credits: [
-      { credits: 120, price: 138 },
-      { credits: 240, price: 265 },
-      { credits: 360, price: 392 },
-      { credits: 600, price: 630 }
+      { credits: 120, price: 110 },
+      { credits: 240, price: 210 },
+      { credits: 360, price: 295 },
+      { credits: 600, price: 480 }
     ]
   }
 };
