@@ -1,24 +1,153 @@
-// All server data (14 servers exactly)
+// All server names (14 unique servers)
 const serverNames = [
   "Trex IPTV", "8K Strong", "Dino IPTV (TVPlus)", "Lion OTT", "Crystal OTT",
   "Magnum OTT", "Dream 4K IPTV", "Eagle IPTV", "Promax (4K OTT, Cobra OTT)",
   "Tivione", "Mega OTT", "Infinity IPTV", "Max OTT", "Nexon IPTV"
 ];
 
-// Convert server name to logo filename (lowercase, replace spaces/parentheses with -)
-function getLogoFilename(name) {
-  let filename = name.toLowerCase()
-    .replace(/[()]/g, '')
-    .replace(/[\s]+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
-  // manual corrections for specific cases
-  if (filename === 'dino-iptv-tvplus') filename = 'dino-iptv';
-  if (filename === '8k-strong') filename = '8k-strong';
-  if (filename === 'promax-4k-ott-cobra-ott') filename = 'promax';
-  return filename + '.webp';
+// ------------------- UNIQUE PRICES PER SERVER -------------------
+// Each server gets its own subscription prices (1,3,6,12 months) and reseller credit packages.
+const serverPrices = {
+  "Trex IPTV": {
+    subscription: { "1 month": "13 €", "3 months": "23 €", "6 months": "33 €", "12 months": "49 €" },
+    credits: [
+      { credits: 120, price: 130 },
+      { credits: 240, price: 250 },
+      { credits: 360, price: 370 },
+      { credits: 600, price: 600 }
+    ]
+  },
+  "8K Strong": {
+    subscription: { "1 month": "15 €", "3 months": "27 €", "6 months": "39 €", "12 months": "59 €" },
+    credits: [
+      { credits: 120, price: 140 },
+      { credits: 240, price: 270 },
+      { credits: 360, price: 400 },
+      { credits: 600, price: 650 }
+    ]
+  },
+  "Dino IPTV (TVPlus)": {
+    subscription: { "1 month": "12 €", "3 months": "22 €", "6 months": "32 €", "12 months": "45 €" },
+    credits: [
+      { credits: 120, price: 125 },
+      { credits: 240, price: 240 },
+      { credits: 360, price: 355 },
+      { credits: 600, price: 580 }
+    ]
+  },
+  "Lion OTT": {
+    subscription: { "1 month": "14 €", "3 months": "25 €", "6 months": "36 €", "12 months": "55 €" },
+    credits: [
+      { credits: 120, price: 135 },
+      { credits: 240, price: 260 },
+      { credits: 360, price: 385 },
+      { credits: 600, price: 620 }
+    ]
+  },
+  "Crystal OTT": {
+    subscription: { "1 month": "16 €", "3 months": "29 €", "6 months": "42 €", "12 months": "65 €" },
+    credits: [
+      { credits: 120, price: 145 },
+      { credits: 240, price: 280 },
+      { credits: 360, price: 415 },
+      { credits: 600, price: 670 }
+    ]
+  },
+  "Magnum OTT": {
+    subscription: { "1 month": "18 €", "3 months": "33 €", "6 months": "48 €", "12 months": "75 €" },
+    credits: [
+      { credits: 120, price: 160 },
+      { credits: 240, price: 310 },
+      { credits: 360, price: 460 },
+      { credits: 600, price: 750 }
+    ]
+  },
+  "Dream 4K IPTV": {
+    subscription: { "1 month": "17 €", "3 months": "31 €", "6 months": "45 €", "12 months": "70 €" },
+    credits: [
+      { credits: 120, price: 150 },
+      { credits: 240, price: 290 },
+      { credits: 360, price: 430 },
+      { credits: 600, price: 700 }
+    ]
+  },
+  "Eagle IPTV": {
+    subscription: { "1 month": "11 €", "3 months": "20 €", "6 months": "29 €", "12 months": "42 €" },
+    credits: [
+      { credits: 120, price: 120 },
+      { credits: 240, price: 230 },
+      { credits: 360, price: 340 },
+      { credits: 600, price: 550 }
+    ]
+  },
+  "Promax (4K OTT, Cobra OTT)": {
+    subscription: { "1 month": "20 €", "3 months": "37 €", "6 months": "54 €", "12 months": "85 €" },
+    credits: [
+      { credits: 120, price: 180 },
+      { credits: 240, price: 350 },
+      { credits: 360, price: 520 },
+      { credits: 600, price: 850 }
+    ]
+  },
+  "Tivione": {
+    subscription: { "1 month": "10 €", "3 months": "18 €", "6 months": "26 €", "12 months": "38 €" },
+    credits: [
+      { credits: 120, price: 110 },
+      { credits: 240, price: 210 },
+      { credits: 360, price: 310 },
+      { credits: 600, price: 500 }
+    ]
+  },
+  "Mega OTT": {
+    subscription: { "1 month": "19 €", "3 months": "35 €", "6 months": "51 €", "12 months": "80 €" },
+    credits: [
+      { credits: 120, price: 170 },
+      { credits: 240, price: 330 },
+      { credits: 360, price: 490 },
+      { credits: 600, price: 800 }
+    ]
+  },
+  "Infinity IPTV": {
+    subscription: { "1 month": "22 €", "3 months": "40 €", "6 months": "58 €", "12 months": "95 €" },
+    credits: [
+      { credits: 120, price: 200 },
+      { credits: 240, price: 390 },
+      { credits: 360, price: 580 },
+      { credits: 600, price: 950 }
+    ]
+  },
+  "Max OTT": {
+    subscription: { "1 month": "21 €", "3 months": "38 €", "6 months": "55 €", "12 months": "88 €" },
+    credits: [
+      { credits: 120, price: 190 },
+      { credits: 240, price: 370 },
+      { credits: 360, price: 550 },
+      { credits: 600, price: 900 }
+    ]
+  },
+  "Nexon IPTV": {
+    subscription: { "1 month": "14 €", "3 months": "26 €", "6 months": "37 €", "12 months": "57 €" },
+    credits: [
+      { credits: 120, price: 138 },
+      { credits: 240, price: 265 },
+      { credits: 360, price: 392 },
+      { credits: 600, price: 630 }
+    ]
+  }
+};
+
+// Helper: get subscription prices for a server
+function getSubscriptionPrices(serverName) {
+  return serverPrices[serverName].subscription;
 }
 
-function getDescription(name, index) {
+// Helper: get reseller credits for a server
+function getResellerCredits(serverName) {
+  return serverPrices[serverName].credits;
+}
+
+// Descriptions (can remain same or be unique per server – keeping generic but ok)
+function getDescription(name) {
   const descMap = {
     "Trex IPTV": "Trex IPTV: 18,000+ live channels, 75,000 movies, 12,000 series. Ultra-stable 4K streaming.",
     "8K Strong": "8K Strong: Next-gen 8K/4K content, 22,000 channels, 90,000 VODs. 99.9% uptime.",
@@ -38,30 +167,16 @@ function getDescription(name, index) {
   return descMap[name] || `${name} delivers premium IPTV with worldwide channels and reseller options.`;
 }
 
-function getSubscriptionPrices(index) {
-  const base1 = [13, 14, 12, 15, 13, 14, 16, 12, 17, 13, 15, 18, 14, 16];
-  const base3 = [23, 25, 22, 27, 24, 26, 29, 22, 31, 24, 27, 33, 25, 29];
-  const base6 = [33, 36, 32, 39, 35, 38, 42, 32, 45, 35, 39, 48, 37, 42];
-  const base12 = [49, 54, 47, 58, 52, 56, 63, 48, 68, 52, 58, 72, 55, 62];
-  const i = index % base1.length;
-  return {
-    "1 month": `${base1[i]} €`,
-    "3 months": `${base3[i]} €`,
-    "6 months": `${base6[i]} €`,
-    "12 months": `${base12[i]} €`
-  };
-}
-
-function getResellerCredits(index) {
-  const multipliers = [1, 1.02, 0.98, 1.05, 0.99, 1.03, 1.07, 0.96, 1.08, 1.01, 1.04, 1.09, 0.97, 1.06];
-  const factor = multipliers[index % multipliers.length];
-  const base = [
-    { credits: 120, price: 130 },
-    { credits: 240, price: 250 },
-    { credits: 360, price: 370 },
-    { credits: 600, price: 600 }
-  ];
-  return base.map(c => ({ credits: c.credits, price: Math.round(c.price * factor) }));
+// Logo filename conversion (same as before)
+function getLogoFilename(name) {
+  let filename = name.toLowerCase()
+    .replace(/[()]/g, '')
+    .replace(/[\s]+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+  if (filename === 'dino-iptv-tvplus') filename = 'dino-iptv';
+  if (filename === '8k-strong') filename = '8k-strong';
+  if (filename === 'promax-4k-ott-cobra-ott') filename = 'promax';
+  return filename + '.webp';
 }
 
 function getFallbackIcon(name, idx) {
@@ -71,17 +186,18 @@ function getFallbackIcon(name, idx) {
   return icons[idx % icons.length];
 }
 
+// Build products array
 const products = serverNames.map((name, idx) => ({
   id: idx,
   name: name,
-  description: getDescription(name, idx),
+  description: getDescription(name),
   logoFile: getLogoFilename(name),
   fallbackIcon: getFallbackIcon(name, idx),
-  subscriptionPrices: getSubscriptionPrices(idx),
-  resellerCredits: getResellerCredits(idx)
+  subscriptionPrices: getSubscriptionPrices(name),
+  resellerCredits: getResellerCredits(name)
 }));
 
-// Render product cards with <img> for logo + fallback
+// Render product cards (unchanged logic but uses new prices)
 function renderProducts() {
   const grid = document.getElementById('productsGrid');
   if (!grid) return;
@@ -118,7 +234,6 @@ function renderProducts() {
     grid.appendChild(card);
   });
 
-  // Attach Join Now listeners
   document.querySelectorAll('.btn-join').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = parseInt(btn.getAttribute('data-server-id'));
@@ -136,7 +251,7 @@ function escapeHtml(str) {
   });
 }
 
-// ----- Plan Modal Logic (unchanged, same as before) -----
+// ----- Plan Modal Logic (uses selected server's prices) -----
 let currentServer = null;
 let selectedPlan = null;
 const planModal = document.getElementById('planModal');
