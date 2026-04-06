@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>OTT Distributor | Premium IPTV Reseller & Subscription Plans</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="OTT Distributor – official reseller for Trex IPTV, 8K Strong, Dino IPTV, Lion OTT, and 10+ servers. Get subscription or reseller credits. WhatsApp support 24/7.">
+  <meta name="keywords" content="OTT distributor, IPTV reseller, Trex IPTV, 8K Strong, Dino IPTV, Lion OTT, Crystal OTT, Magnum OTT, Dream 4K, Eagle IPTV, Promax, Tivione, Mega OTT, Infinity IPTV, Max OTT, Nexon IPTV, IPTV subscription, reseller credits, buy IPTV, Morocco IPTV, ottdistributor.net">
+  <meta name="author" content="OTT Distributor">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ottdistributor.net/">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="OTT Distributor – IPTV Reseller & Subscriptions">
+  <meta property="og:description" content="Best IPTV servers with reseller credit packages and subscription plans. Instant WhatsApp activation.">
+  <meta property="og:image" content="https://ottdistributor.net/logo-preview.png">
+  <meta property="og:url" content="https://ottdistributor.net/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Geo & Contact -->
+  <meta name="geo.region" content="MA">
+  <meta name="geo.placename" content="Morocco">
+  
+  <!-- Favicon (optional) -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- External CSS & JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Structured Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "OTT Distributor",
+    "url": "https://ottdistributor.net/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ottdistributor.net/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+212670969192",
+      "contactType": "customer support",
+      "availableLanguage": ["English", "French", "Arabic"]
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-tower-broadcast"></i></div>
+        <div>
+          <h1>OTT Distributor</h1>
+          <span>ottdistributor.net</span>
+        </div>
+      </div>
+      <div class="social-buttons">
+        <a href="https://wa.me/212670969192" target="_blank" class="btn-social whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://t.me/reselleriptvcom" target="_blank" class="btn-social telegram">
+          <i class="fab fa-telegram"></i> Telegram
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="banner">
+      <h2>🚀 Premium IPTV Reseller & Subscription Plans</h2>
+      <p>Choose your server, pick a plan (subscription or reseller credits), and start instantly via WhatsApp.</p>
+      <div class="banner-buttons">
+        <button class="btn-primary" id="freeTrialBtn"><i class="fas fa-gem"></i> Get Free Trial</button>
+        <button class="btn-secondary" id="becomeResellerBtn"><i class="fas fa-chart-line"></i> Become Reseller</button>
+      </div>
+    </div>
+
+    <h2 class="section-title">📡 All Servers – Join Now & Choose Plan</h2>
+    <div id="productsGrid" class="products-grid"></div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <i class="fas fa-headset"></i> 24/7 Reseller Support | All prices in EUR | Credits are one-time for reseller panel<br>
+      © 2025 OTT Distributor – Official IPTV Reseller
+    </div>
+  </footer>
+
+  <!-- Plan Selection Modal (for Join Now buttons) -->
+  <div id="planModal" class="modal-overlay">
+    <div class="modal-container">
+      <h3 id="modalServerName">Select Plan</h3>
+      <p id="modalSubtitle">Choose a subscription or reseller credit package for this server.</p>
+      <div class="plan-group">
+        <h4><i class="fas fa-calendar-alt"></i> Subscription Plans (EUR)</h4>
+        <div id="subscriptionOptions"></div>
+      </div>
+      <div class="plan-group">
+        <h4><i class="fas fa-coins"></i> Reseller Credit Packages (EUR)</h4>
+        <div id="creditOptions"></div>
+      </div>
+      <div class="modal-buttons">
+        <button class="btn-modal-cancel" id="closePlanModalBtn">Cancel</button>
+        <button class="btn-modal-submit" id="submitPlanBtn">Continue on WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- General Modal for Free Trial / Become Reseller -->
+  <div id="generalModal" class="modal-overlay">
+    <div class="modal-container">
+      <h3 id="generalModalTitle">Select Server</h3>
+      <p id="generalModalDesc">Choose a server (required) and confirm your request.</p>
+      <div class="form-group">
+        <label>🌐 Server <span class="required-star">*</span></label>
+        <select id="generalServerSelect">
+          <option value="" disabled selected>– Select a server –</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div class="checkbox-group">
+          <input type="checkbox" id="generalResellerCheckbox">
+          <label>✅ I also want to become a reseller</label>
+        </div>
+      </div>
+      <div class="modal-buttons">
+        <button class="btn-modal-cancel" id="closeGeneralModalBtn">Cancel</button>
+        <button class="btn-modal-submit" id="submitGeneralModalBtn">Continue on WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
