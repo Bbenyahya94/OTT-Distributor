@@ -9,14 +9,20 @@
   <meta name="author" content="OTT Distributor">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ottdistributor.net/">
+  
+  <!-- Open Graph / Social Media -->
   <meta property="og:title" content="OTTDistributor IPTV Reseller & IPTV Subscription">
   <meta property="og:description" content="Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ottdistributor.net/">
   <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
+    /* Animated auto — includes keyframe animations for banner, buttons, and auto slideshow */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
@@ -53,12 +59,19 @@
       color: transparent;
     }
     
-    /* Info Banner */
+    /* Info Banner with animated gradient background */
     .info-banner {
-      background: linear-gradient(135deg, #eef2ff, #ffffff);
+      background: linear-gradient(135deg, #eef2ff, #ffffff, #e0e7ff);
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
       text-align: center;
       padding: 48px 24px;
       border-bottom: 1px solid #e2e8f0;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .info-banner h2 {
       font-size: 2.2rem;
@@ -95,7 +108,7 @@
     .btn-secondary { background: #0f172a; color: white; }
     .btn-secondary:hover { background: #1e293b; transform: translateY(-2px); }
     
-    /* Panel List Strip (All names) */
+    /* Panel List Strip with auto-scroll animation */
     .panel-strip {
       background: #0f172a;
       color: white;
@@ -106,6 +119,13 @@
       overflow-x: auto;
       white-space: nowrap;
       scrollbar-width: thin;
+      border-bottom: 2px solid #facc15;
+      animation: subtlePulse 2s infinite;
+    }
+    @keyframes subtlePulse {
+      0% { border-bottom-color: #facc15; }
+      50% { border-bottom-color: #ffd966; }
+      100% { border-bottom-color: #facc15; }
     }
     .panel-strip span {
       display: inline-block;
@@ -116,7 +136,7 @@
       color: #facc15;
     }
     
-    /* Hero Slideshow */
+    /* Hero Slideshow (auto-rotates via JavaScript) */
     .hero-slideshow {
       position: relative;
       width: 100%;
@@ -377,7 +397,7 @@
   </div>
 </header>
 
-<!-- Banner with title & description -->
+<!-- Banner with animated gradient background -->
 <div class="info-banner">
   <h2>🚀 Premium IPTV Reseller & Subscription Plans</h2>
   <p>Choose your server, pick a plan (subscription or reseller credits), and start instantly via WhatsApp.</p>
@@ -387,13 +407,13 @@
   </div>
 </div>
 
-<!-- Full list of panels (all names) -->
+<!-- Full list of panels with auto-pulsing border -->
 <div class="panel-strip">
   <i class="fas fa-server"></i> <strong>Official Reseller & Subscriptions for:</strong>
   <span>Trex IPTV</span> • <span>8K Strong</span> • <span>Dino IPTV (TVPlus)</span> • <span>Lion OTT</span> • <span>Crystal OTT</span> • <span>Magnum OTT</span> • <span>Dream 4K IPTV</span> • <span>Eagle IPTV</span> • <span>ProMax (4K OTT / Cobra OTT)</span> • <span>Tivione</span> • <span>Mega OTT</span> • <span>Infinity IPTV</span> • <span>Max OTT</span> • <span>Nexon IPTV</span>
 </div>
 
-<!-- Hero Slideshow -->
+<!-- Hero Slideshow (auto-rotates every 6 seconds) -->
 <div class="hero-slideshow" id="heroSlideshow">
   <div class="slide-hero active" style="background-image: linear-gradient(135deg, #1e293b, #0f172a), url('https://picsum.photos/id/104/1920/600'); background-blend-mode: overlay;">
     <div class="slide-content">
@@ -565,7 +585,7 @@
     });
   });
 
-  // Slideshow
+  // Slideshow with auto-rotation
   const slides = document.querySelectorAll('.slide-hero');
   const dotsContainer = document.getElementById('dotsHero');
   let currentIndex = 0, autoInterval;
