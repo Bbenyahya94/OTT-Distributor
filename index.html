@@ -3,36 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>OTT Distributor | Premium IPTV Reseller & Subscription Plans</title>
-  <meta name="description" content="OTT Distributor offers 15+ premium IPTV panels: Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon. Get free trials, wholesale reseller credits, and 24/7 support.">
-  <meta name="keywords" content="OTT distributor, IPTV reseller, IPTV subscriptions, wholesale IPTV, reseller credits, Trex IPTV, 8K Strong, Dino IPTV, Lion OTT, Crystal OTT, Magnum OTT, Dream 4K, Eagle IPTV, ProMax, Tivione, Mega OTT, Infinity IPTV, Max OTT, Nexon IPTV, free trial IPTV, buy IPTV credits">
+  <title>OTTDistributor IPTV Reseller & IPTV Subscription</title>
+  <meta name="description" content="OTTDistributor IPTV Reseller and IPTV Subscription. Best prices, free trials, reseller credits. Trex, Strong 8K, Dream 4K & more.">
+  <meta name="keywords" content="OTT distributor, IPTV reseller, IPTV subscriptions, wholesale IPTV, reseller credits, Trex IPTV, 8K Strong, Dino IPTV, Lion OTT, Crystal OTT, Magnum OTT, Dream 4K, Eagle IPTV, ProMax, Tivione, Mega OTT, Infinity IPTV, Max OTT, Nexon IPTV">
   <meta name="author" content="OTT Distributor">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ottdistributor.net/">
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="OTT Distributor | Premium IPTV Reseller & Subscription Plans">
-  <meta property="og:description" content="Start your IPTV business with 15+ premium panels. Free trials, wholesale credits, and 24/7 support.">
+  <meta property="og:title" content="OTTDistributor IPTV Reseller & IPTV Subscription">
+  <meta property="og:description" content="Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ottdistributor.net/">
-  <meta property="og:image" content="https://ottdistributor.net/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OTT Distributor | IPTV Reseller Platform">
-  <meta name="twitter:description" content="Premium IPTV panels for resellers and subscribers. Free trials available.">
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "OTT Distributor",
-      "url": "https://ottdistributor.net/",
-      "description": "Premium IPTV reseller platform with 15+ panels, wholesale credits, and free trials.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://ottdistributor.net/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -72,7 +53,7 @@
       color: transparent;
     }
     
-    /* Info Banner (Title + Description + Buttons) */
+    /* Info Banner */
     .info-banner {
       background: linear-gradient(135deg, #eef2ff, #ffffff);
       text-align: center;
@@ -109,22 +90,30 @@
       align-items: center;
       gap: 10px;
     }
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-      box-shadow: 0 2px 8px rgba(37,99,235,0.2);
-    }
-    .btn-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
-    .btn-secondary {
+    .btn-primary { background: #2563eb; color: white; box-shadow: 0 2px 8px rgba(37,99,235,0.2); }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+    .btn-secondary { background: #0f172a; color: white; }
+    .btn-secondary:hover { background: #1e293b; transform: translateY(-2px); }
+    
+    /* Panel List Strip (All names) */
+    .panel-strip {
       background: #0f172a;
       color: white;
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: thin;
     }
-    .btn-secondary:hover {
-      background: #1e293b;
-      transform: translateY(-2px);
+    .panel-strip span {
+      display: inline-block;
+      margin: 0 8px;
+    }
+    .panel-strip i {
+      margin-right: 6px;
+      color: #facc15;
     }
     
     /* Hero Slideshow */
@@ -151,10 +140,7 @@
       background-size: cover;
       background-position: center;
     }
-    .slide-hero.active {
-      opacity: 1;
-      z-index: 2;
-    }
+    .slide-hero.active { opacity: 1; z-index: 2; }
     .slide-content {
       max-width: 800px;
       padding: 0 24px;
@@ -163,16 +149,8 @@
       border-radius: 32px;
       padding: 40px 32px;
     }
-    .slide-content h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-    .slide-content p {
-      font-size: 1.2rem;
-      margin-bottom: 24px;
-      opacity: 0.9;
-    }
+    .slide-content h2 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; }
+    .slide-content p { font-size: 1.2rem; margin-bottom: 24px; opacity: 0.9; }
     .slide-content .btn-light {
       background: white;
       color: #0f172a;
@@ -183,10 +161,7 @@
       display: inline-block;
       transition: transform 0.2s;
     }
-    .slide-content .btn-light:hover {
-      transform: translateY(-3px);
-      background: #f1f5f9;
-    }
+    .slide-content .btn-light:hover { transform: translateY(-3px); background: #f1f5f9; }
     .prev-slide, .next-slide {
       position: absolute;
       top: 50%;
@@ -222,10 +197,7 @@
       cursor: pointer;
       transition: 0.2s;
     }
-    .dot-hero.active {
-      background: white;
-      transform: scale(1.2);
-    }
+    .dot-hero.active { background: white; transform: scale(1.2); }
     
     /* Tabs */
     .tab-bar {
@@ -253,31 +225,13 @@
       transition: all 0.2s;
       color: #334155;
     }
-    .tab-btn.active {
-      background: white;
-      color: #2563eb;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
+    .tab-btn.active { background: white; color: #2563eb; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
     
     /* Pages */
-    .page {
-      display: none;
-      padding: 48px 0 40px;
-    }
-    .page.active-page {
-      display: block;
-    }
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: #475569;
-      margin-bottom: 48px;
-    }
+    .page { display: none; padding: 48px 0 40px; }
+    .page.active-page { display: block; }
+    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; text-align: center; }
+    .section-sub { text-align: center; color: #475569; margin-bottom: 48px; }
     .panels-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -291,10 +245,7 @@
       transition: transform 0.2s, box-shadow 0.2s;
       border: 1px solid #eef2ff;
     }
-    .panel-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
-    }
+    .panel-card:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12); }
     .card-header {
       background: linear-gradient(135deg, #f1f5f9, #ffffff);
       padding: 20px 24px;
@@ -308,22 +259,9 @@
       align-items: baseline;
       flex-wrap: wrap;
     }
-    .rating {
-      font-size: 0.85rem;
-      background: #eef2ff;
-      padding: 4px 10px;
-      border-radius: 30px;
-      color: #2563eb;
-    }
-    .card-body {
-      padding: 20px 24px;
-    }
-    .description {
-      color: #334155;
-      margin-bottom: 16px;
-      font-size: 0.9rem;
-      line-height: 1.45;
-    }
+    .rating { font-size: 0.85rem; background: #eef2ff; padding: 4px 10px; border-radius: 30px; color: #2563eb; }
+    .card-body { padding: 20px 24px; }
+    .description { color: #334155; margin-bottom: 16px; font-size: 0.9rem; line-height: 1.45; }
     .stats {
       display: flex;
       flex-wrap: wrap;
@@ -335,28 +273,10 @@
       padding: 8px 12px;
       border-radius: 20px;
     }
-    .price {
-      font-size: 1.9rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 12px 0;
-    }
-    .price small {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #64748b;
-    }
-    .features {
-      list-style: none;
-      margin: 16px 0;
-    }
-    .features li {
-      padding: 6px 0;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .price { font-size: 1.9rem; font-weight: 800; color: #0f172a; margin: 12px 0; }
+    .price small { font-size: 0.9rem; font-weight: 400; color: #64748b; }
+    .features { list-style: none; margin: 16px 0; }
+    .features li { padding: 6px 0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
     .features li i.fa-check { color: #10b981; width: 18px; }
     .btn-group {
       display: flex;
@@ -386,7 +306,7 @@
     .btn-trial { background: #f59e0b; color: white; }
     .btn-wa:hover, .btn-tg:hover, .btn-trial:hover { transform: translateY(-2px); opacity: 0.9; }
     
-    /* FAQ Section */
+    /* FAQ */
     .faq-section {
       background: white;
       padding: 60px 0;
@@ -394,10 +314,7 @@
       border-top: 1px solid #eef2ff;
       border-bottom: 1px solid #eef2ff;
     }
-    .faq-grid {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    .faq-grid { max-width: 900px; margin: 0 auto; }
     .faq-item {
       border-bottom: 1px solid #e2e8f0;
       padding: 16px 0;
@@ -412,10 +329,7 @@
       padding: 8px 0;
       color: #0f172a;
     }
-    .faq-question i {
-      transition: transform 0.3s;
-      color: #3b82f6;
-    }
+    .faq-question i { transition: transform 0.3s; color: #3b82f6; }
     .faq-answer {
       max-height: 0;
       overflow: hidden;
@@ -423,10 +337,7 @@
       color: #475569;
       padding-right: 24px;
     }
-    .faq-answer.active {
-      max-height: 300px;
-      padding-bottom: 12px;
-    }
+    .faq-answer.active { max-height: 300px; padding-bottom: 12px; }
     
     footer {
       background: #0f172a;
@@ -434,6 +345,15 @@
       text-align: center;
       padding: 32px;
       margin-top: 0;
+    }
+    .official-text {
+      background: #1e293b;
+      padding: 12px;
+      border-radius: 40px;
+      margin: 16px auto;
+      max-width: 90%;
+      font-size: 0.85rem;
+      color: #facc15;
     }
     @media (max-width: 768px) {
       .info-banner h2 { font-size: 1.6rem; }
@@ -446,7 +366,7 @@
       .card-header h3 { font-size: 1.3rem; flex-direction: column; gap: 8px; }
       .btn-group { flex-direction: column; }
       .btn-wa, .btn-tg, .btn-trial { width: 100%; }
-      .faq-question { font-size: 1rem; }
+      .panel-strip { font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -457,7 +377,7 @@
   </div>
 </header>
 
-<!-- Banner: Title, Description, Buttons -->
+<!-- Banner with title & description -->
 <div class="info-banner">
   <h2>🚀 Premium IPTV Reseller & Subscription Plans</h2>
   <p>Choose your server, pick a plan (subscription or reseller credits), and start instantly via WhatsApp.</p>
@@ -465,6 +385,12 @@
     <button class="btn-primary" id="freeTrialBtn"><i class="fas fa-gem"></i> Get Free Trial</button>
     <button class="btn-secondary" id="becomeResellerBtn"><i class="fas fa-chart-line"></i> Become Reseller</button>
   </div>
+</div>
+
+<!-- Full list of panels (all names) -->
+<div class="panel-strip">
+  <i class="fas fa-server"></i> <strong>Official Reseller & Subscriptions for:</strong>
+  <span>Trex IPTV</span> • <span>8K Strong</span> • <span>Dino IPTV (TVPlus)</span> • <span>Lion OTT</span> • <span>Crystal OTT</span> • <span>Magnum OTT</span> • <span>Dream 4K IPTV</span> • <span>Eagle IPTV</span> • <span>ProMax (4K OTT / Cobra OTT)</span> • <span>Tivione</span> • <span>Mega OTT</span> • <span>Infinity IPTV</span> • <span>Max OTT</span> • <span>Nexon IPTV</span>
 </div>
 
 <!-- Hero Slideshow -->
@@ -523,7 +449,7 @@
   </div>
 </main>
 
-<!-- FAQ Section (12 questions) -->
+<!-- FAQ Section -->
 <section class="faq-section">
   <div class="container">
     <h2 class="section-title">❓ Frequently Asked Questions</h2>
@@ -533,12 +459,15 @@
 </section>
 
 <footer>
-  <p>© 2025 OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.</p>
+  <div class="official-text">
+    <i class="fas fa-check-circle"></i> OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.
+  </div>
+  <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform. All rights reserved.</p>
   <p style="margin-top: 12px;">Contact via WhatsApp or Telegram for instant support and free trials.</p>
 </footer>
 
 <script>
-  // ======================== PANELS DATA ========================
+  // ======================== PANELS DATA (14 panels) ========================
   const panels = [
     { id: "trex", name: "Trex IPTV", rating: 4.9, channels: "42,500+", movies: "110,000+", series: "18,500+", description: "The most popular panel with the largest content library. 4K/8K quality, M3U/MAG support, anti-freeze technology.", features: ["4K/8K Streaming", "Anti-freeze servers", "M3U + MAG", "24/7 Support"], subPrice: "€49/year", resellerCredits: "120 Credits", resellerPrice: "€185", creditRule: "12 credits = 1 year" },
     { id: "strong8k", name: "8K Strong", rating: 4.9, channels: "34,261+", movies: "123,499+", series: "0", description: "Premium 8K streaming panel with instant activation. Global CDN, no buffering, and catch-up TV.", features: ["8K Streaming", "Instant Activation", "Global CDN", "Catch-up TV"], subPrice: "€50/year", resellerCredits: "120 Credits", resellerPrice: "€190", creditRule: "12 credits = 1 year" },
@@ -556,24 +485,15 @@
     { id: "nexon", name: "Nexon IPTV", rating: 4.7, channels: "17,200+", movies: "120,000+", series: "0", description: "Best-selling in Spain & Latin America. Fast activation, easy management.", features: ["Fast Activation", "Easy Management", "Spain Optimized", "Large VOD"], subPrice: "€45/year", resellerCredits: "120 Credits", resellerPrice: "€100", creditRule: "12 credits = 1 year" }
   ];
 
-  // Subscription card
   function createSubscriptionCard(p) {
     const trialMsg = `Hello, I would like to request a FREE TRIAL for ${p.name}. Please provide access. Thank you!`;
     return `
       <div class="panel-card">
-        <div class="card-header">
-          <h3>${p.name} <span class="rating">⭐ ${p.rating}</span></h3>
-        </div>
+        <div class="card-header"><h3>${p.name} <span class="rating">⭐ ${p.rating}</span></h3></div>
         <div class="card-body">
-          <div class="stats">
-            <span>📺 ${p.channels}</span>
-            <span>🎬 ${p.movies}</span>
-            ${p.series !== "0" ? `<span>📺 ${p.series} series</span>` : ''}
-          </div>
+          <div class="stats"><span>📺 ${p.channels}</span><span>🎬 ${p.movies}</span>${p.series !== "0" ? `<span>📺 ${p.series} series</span>` : ''}</div>
           <div class="description">${p.description}</div>
-          <ul class="features">
-            ${p.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
-          </ul>
+          <ul class="features">${p.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}</ul>
           <div class="price">${p.subPrice} <small>/ 1 year</small></div>
           <div class="btn-group">
             <a href="https://wa.me/212670969192?text=${encodeURIComponent(trialMsg)}" target="_blank" class="btn-trial"><i class="fas fa-gift"></i> Free Trial</a>
@@ -585,21 +505,14 @@
     `;
   }
 
-  // Reseller card
   function createResellerCard(p) {
     let subsCount = p.creditRule.includes("1 credit") ? parseInt(p.resellerCredits) : parseInt(p.resellerCredits)/12;
     const trialMsg = `Hello, I would like to request a FREE TRIAL / demo access for the reseller panel of ${p.name}. Please provide access. Thank you!`;
     return `
       <div class="panel-card">
-        <div class="card-header">
-          <h3>${p.name} <span class="rating">⭐ ${p.rating}</span></h3>
-        </div>
+        <div class="card-header"><h3>${p.name} <span class="rating">⭐ ${p.rating}</span></h3></div>
         <div class="card-body">
-          <div class="stats">
-            <span>📺 ${p.channels}</span>
-            <span>🎬 ${p.movies}</span>
-            ${p.series !== "0" ? `<span>📺 ${p.series} series</span>` : ''}
-          </div>
+          <div class="stats"><span>📺 ${p.channels}</span><span>🎬 ${p.movies}</span>${p.series !== "0" ? `<span>📺 ${p.series} series</span>` : ''}</div>
           <div class="description">${p.description}</div>
           <ul class="features">
             <li><i class="fas fa-check"></i> <strong>${p.resellerCredits}</strong> wholesale credits</li>
@@ -618,7 +531,6 @@
     `;
   }
 
-  // Render grids
   const subsGrid = document.getElementById('subscriptionsGrid');
   const resellerGrid = document.getElementById('resellerGrid');
   if (subsGrid) subsGrid.innerHTML = panels.map(p => createSubscriptionCard(p)).join('');
@@ -629,46 +541,22 @@
   const resTab = document.getElementById('tabResellerBtn');
   const subsPage = document.getElementById('subscriptionsPage');
   const resPage = document.getElementById('resellerPage');
-
   function setActiveTab(active) {
-    subsTab.classList.remove('active');
-    resTab.classList.remove('active');
+    subsTab.classList.remove('active'); resTab.classList.remove('active');
     if (active === 'subs') {
-      subsTab.classList.add('active');
-      subsPage.classList.add('active-page');
-      resPage.classList.remove('active-page');
+      subsTab.classList.add('active'); subsPage.classList.add('active-page'); resPage.classList.remove('active-page');
       window.location.hash = 'subscriptions';
     } else {
-      resTab.classList.add('active');
-      resPage.classList.add('active-page');
-      subsPage.classList.remove('active-page');
+      resTab.classList.add('active'); resPage.classList.add('active-page'); subsPage.classList.remove('active-page');
       window.location.hash = 'reseller';
     }
   }
   subsTab.addEventListener('click', () => setActiveTab('subs'));
   resTab.addEventListener('click', () => setActiveTab('reseller'));
-
-  // Banner buttons
-  document.getElementById('freeTrialBtn').addEventListener('click', () => {
-    setActiveTab('subs');
-    document.getElementById('subscriptionsPage').scrollIntoView({ behavior: 'smooth' });
-  });
-  document.getElementById('becomeResellerBtn').addEventListener('click', () => {
-    setActiveTab('reseller');
-    document.getElementById('resellerPage').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // Hero buttons
-  document.getElementById('heroSubsBtn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    setActiveTab('subs');
-    document.getElementById('subscriptionsPage').scrollIntoView({ behavior: 'smooth' });
-  });
-  document.getElementById('heroResellerBtn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    setActiveTab('reseller');
-    document.getElementById('resellerPage').scrollIntoView({ behavior: 'smooth' });
-  });
+  document.getElementById('freeTrialBtn').addEventListener('click', () => { setActiveTab('subs'); document.getElementById('subscriptionsPage').scrollIntoView({ behavior: 'smooth' }); });
+  document.getElementById('becomeResellerBtn').addEventListener('click', () => { setActiveTab('reseller'); document.getElementById('resellerPage').scrollIntoView({ behavior: 'smooth' }); });
+  document.getElementById('heroSubsBtn')?.addEventListener('click', (e) => { e.preventDefault(); setActiveTab('subs'); subsPage.scrollIntoView({ behavior: 'smooth' }); });
+  document.getElementById('heroResellerBtn')?.addEventListener('click', (e) => { e.preventDefault(); setActiveTab('reseller'); resPage.scrollIntoView({ behavior: 'smooth' }); });
   document.querySelectorAll('.btn-light').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const href = btn.getAttribute('href');
@@ -677,75 +565,56 @@
     });
   });
 
-  // Slideshow logic
+  // Slideshow
   const slides = document.querySelectorAll('.slide-hero');
   const dotsContainer = document.getElementById('dotsHero');
-  let currentIndex = 0;
-  let autoInterval;
-
+  let currentIndex = 0, autoInterval;
   function createDots() {
     dotsContainer.innerHTML = '';
     slides.forEach((_, i) => {
-      const dot = document.createElement('span');
-      dot.classList.add('dot-hero');
+      const dot = document.createElement('span'); dot.classList.add('dot-hero');
       if (i === currentIndex) dot.classList.add('active');
       dot.addEventListener('click', () => goToSlide(i));
       dotsContainer.appendChild(dot);
     });
   }
-
   function goToSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (dotsContainer.children[i]) dotsContainer.children[i].classList.remove('active');
-    });
+    slides.forEach((s, i) => { s.classList.remove('active'); if(dotsContainer.children[i]) dotsContainer.children[i].classList.remove('active'); });
     currentIndex = (index + slides.length) % slides.length;
     slides[currentIndex].classList.add('active');
-    if (dotsContainer.children[currentIndex]) dotsContainer.children[currentIndex].classList.add('active');
+    if(dotsContainer.children[currentIndex]) dotsContainer.children[currentIndex].classList.add('active');
     resetAutoSlide();
   }
-
   function nextSlide() { goToSlide(currentIndex + 1); }
   function prevSlide() { goToSlide(currentIndex - 1); }
-  function resetAutoSlide() {
-    if (autoInterval) clearInterval(autoInterval);
-    autoInterval = setInterval(() => nextSlide(), 6000);
-  }
-
+  function resetAutoSlide() { if (autoInterval) clearInterval(autoInterval); autoInterval = setInterval(() => nextSlide(), 6000); }
   document.getElementById('prevSlide').addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
   document.getElementById('nextSlide').addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-  createDots();
-  goToSlide(0);
-  resetAutoSlide();
+  createDots(); goToSlide(0); resetAutoSlide();
 
-  // FAQ data (12 items)
+  // FAQ
   const faqData = [
     { q: "How do I get a free trial?", a: "Click the 'Free Trial' button on any panel card. You'll be redirected to WhatsApp or Telegram — just send a message with your preferred panel name and we'll activate a 24h trial instantly." },
-    { q: "What payment methods do you accept?", a: "We accept Cryptocurrency (USDT, BTC), PayPal, Credit Card, Bank Transfer, and Western Union. All payments are secure." },
+    { q: "What payment methods do you accept?", a: "We accept Cryptocurrency (USDT, BTC), PayPal, Credit Card, Bank Transfer, and Western Union." },
     { q: "How long does it take to get panel access after purchase?", a: "Within 24 hours after payment confirmation. Most subscriptions and reseller packs are delivered within 2-4 hours." },
     { q: "Can I resell subscriptions from multiple panels?", a: "Yes! As a reseller, you can buy credits from any of our 15+ panels and sell subscriptions to your customers." },
-    { q: "What is the credit system?", a: "Credits are used to create subscriptions. For panels with '1 credit = 1 year', you need 1 credit per subscription. For '12 credits = 1 year', you need 12 credits per subscription. Wholesale packs give you credits at bulk prices." },
-    { q: "Do you offer a reseller dashboard?", a: "Yes, each panel comes with a dedicated reseller dashboard where you can create users, manage subscriptions, and view analytics." },
-    { q: "What devices are supported?", a: "All panels support MAG, Enigma, Smart TVs (via STB Emu), Android/iOS, Firestick, PC (VLC, IPTV players), and Tivimate." },
-    { q: "Is there a money-back guarantee?", a: "We don't offer refunds due to the nature of digital goods, but we provide free trials so you can test before buying." },
-    { q: "Can I upgrade my reseller credits later?", a: "Absolutely. You can purchase additional wholesale packs at any time. Contact us via WhatsApp or Telegram." },
-    { q: "Do you provide EPG and catch-up?", a: "Most panels include EPG (Electronic Program Guide) and catch-up TV for selected channels. Check the panel description for details." },
-    { q: "How do I contact support?", a: "You can reach us 24/7 via WhatsApp (+212 670-969192) or Telegram (@OTTDistributor). We typically reply within 2 hours." },
-    { q: "Are there any hidden fees?", a: "No hidden fees. The price you see for subscriptions or reseller packs is the final price. No setup fees or monthly maintenance costs." }
+    { q: "What is the credit system?", a: "Credits create subscriptions. '1 credit = 1 year' means 1 credit per subscription. '12 credits = 1 year' means 12 credits per subscription." },
+    { q: "Do you offer a reseller dashboard?", a: "Yes, each panel comes with a dedicated reseller dashboard for managing customers and subscriptions." },
+    { q: "What devices are supported?", a: "MAG, Enigma, Smart TVs, Android/iOS, Firestick, PC, Tivimate, and more." },
+    { q: "Is there a money-back guarantee?", a: "No refunds due to digital goods, but free trials let you test before buying." },
+    { q: "Can I upgrade my reseller credits later?", a: "Absolutely. Purchase additional wholesale packs anytime via WhatsApp or Telegram." },
+    { q: "Do you provide EPG and catch-up?", a: "Most panels include EPG and catch-up TV for selected channels." },
+    { q: "How do I contact support?", a: "24/7 via WhatsApp (+212 670-969192) or Telegram (@OTTDistributor)." },
+    { q: "Are there any hidden fees?", a: "No hidden fees. The price you see is final — no setup or monthly fees." }
   ];
-
   const faqContainer = document.getElementById('faqContainer');
   if (faqContainer) {
     faqContainer.innerHTML = faqData.map((item, idx) => `
       <div class="faq-item">
-        <div class="faq-question" data-idx="${idx}">
-          <span>${item.q}</span>
-          <i class="fas fa-chevron-down"></i>
-        </div>
+        <div class="faq-question" data-idx="${idx}"><span>${item.q}</span><i class="fas fa-chevron-down"></i></div>
         <div class="faq-answer" id="faqAns${idx}">${item.a}</div>
       </div>
     `).join('');
-    
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
         const idx = q.getAttribute('data-idx');
@@ -756,8 +625,6 @@
       });
     });
   }
-
-  // Hash handling
   if (window.location.hash === '#reseller') setActiveTab('reseller');
   else setActiveTab('subs');
 </script>
