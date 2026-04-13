@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTT Distributor | IPTV Blog - News, Guides & Tips</title>
+  <meta name="description" content="Latest IPTV news, reseller guides, panel reviews, and tips to grow your IPTV business. 50+ articles.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>/* same global styles as previous pages */</style>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.5; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+    .header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #e2e8f0; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; gap: 16px; }
+    .logo { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #0f172a, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; }
+    .nav-menu { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-menu a { text-decoration: none; color: #1e293b; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
+    .nav-menu a:hover, .nav-menu a.active { color: #2563eb; }
+    .info-banner { background: linear-gradient(135deg, #eef2ff, #ffffff, #e0e7ff); text-align: center; padding: 48px 24px; border-bottom: 1px solid #e2e8f0; }
+    .info-banner h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+    .info-banner p { font-size: 1.1rem; color: #334155; max-width: 700px; margin: 0 auto; }
+    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; text-align: center; }
+    .section-sub { text-align: center; color: #475569; margin-bottom: 48px; }
+    .panels-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px; margin: 40px 0; }
+    .panel-card { background: white; border-radius: 28px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.04); transition: transform 0.2s; border: 1px solid #eef2ff; }
+    .panel-card:hover { transform: translateY(-6px); }
+    .card-header { background: linear-gradient(135deg, #f1f5f9, #ffffff); padding: 20px 24px; border-bottom: 1px solid #eef2ff; }
+    .card-header h3 { font-size: 1.3rem; font-weight: 700; }
+    .card-body { padding: 20px 24px; }
+    .description { color: #334155; margin-bottom: 16px; font-size: 0.9rem; line-height: 1.45; }
+    .btn-outline { background: transparent; border: 1.5px solid #2563eb; color: #2563eb; padding: 8px 20px; border-radius: 40px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.2s; }
+    .btn-outline:hover { background: #2563eb; color: white; }
+    footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 32px; margin-top: 40px; }
+    .official-text { background: #1e293b; padding: 12px; border-radius: 40px; margin: 16px auto; max-width: 90%; font-size: 0.85rem; color: #facc15; }
+    @media (max-width: 768px) { .nav { flex-direction: column; } .nav-menu { justify-content: center; gap: 16px; } .panels-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="nav">
+    <a href="index.html" class="logo">OTT<span style="color:#3b82f6;">Distributor</span></a>
+    <ul class="nav-menu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="reseller.html">👑 Reseller Plans</a></li>
+      <li><a href="subscription.html">📺 Subscriptions</a></li>
+      <li><a href="index.html#faq">❓ FAQ</a></li>
+      <li><a href="index.html#contact">📞 Contact</a></li>
+      <li><a href="blog.html" class="active">📝 Blog</a></li>
+    </ul>
+  </div>
+</header>
+<div class="info-banner">
+  <h2>📝 IPTV Blog - News, Guides & Tips</h2>
+  <p>Stay updated with the latest IPTV trends, reseller strategies, and panel reviews.</p>
+</div>
+<div class="container">
+  <div class="panels-grid" id="blogGrid"></div>
+</div>
+<footer>
+  <div class="official-text"><i class="fas fa-check-circle"></i> OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.</div>
+  <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform.</p>
+</footer>
+<script>
+  const blogPosts = [
+    "How to Start an IPTV Reseller Business", "Top 10 IPTV Players for 2025", "Understanding IPTV Credit System",
+    "Best Panels for 4K Streaming", "IPTV vs Cable: Which is Better?", "How to Increase IPTV Reseller Profits",
+    "Beginner's Guide to IPTV", "Trex IPTV Full Review", "8K Strong Panel Features", "Crystal OTT vs Magnum OTT",
+    "Dream 4K IPTV Channel List", "Eagle IPTV Installation Guide", "ProMax Panel Reseller Tips", "Tivione Setup on Firestick",
+    "Mega OTT vs Infinity IPTV", "Max OTT Channel Categories", "Nexon IPTV for Latin America", "How to Get Free IPTV Trials",
+    "Best IPTV for Sports Fans", "IPTV for USA/Canada Users", "EPG and Catch-up Explained", "How to Use Tivimate with IPTV",
+    "Reseller Dashboard Walkthrough", "Wholesale Credits Strategy", "How to Sell IPTV Subscriptions", "IPTV Payment Methods Guide",
+    "Avoid IPTV Scams", "Best IPTV for Arabic Channels", "IPTV for European Channels", "How to Renew IPTV Subscription",
+    "IPTV on Smart TV", "IPTV on Android Box", "IPTV on iOS Devices", "IPTV on MAG Devices", "IPTV on Enigma2",
+    "How to Backup IPTV Playlist", "How to Add EPG to IPTV", "Best IPTV for PPV Events", "IPTV with VPN: Do You Need It?",
+    "How to Test IPTV Before Buying", "IPTV Reseller Success Stories", "How to Get IPTV Support 24/7", "IPTV Channel List Updates",
+    "How to Create IPTV M3U Link", "How to Use IPTV with VLC", "Best IPTV for Movies and Series", "IPTV for Kids Channels",
+    "How to Monetize IPTV Reselling", "IPTV Industry Trends 2025", "Why Choose OTT Distributor", "How to Get a Free Trial on Any Panel"
+  ];
+  const grid = document.getElementById('blogGrid');
+  if (grid) {
+    grid.innerHTML = blogPosts.map((title, idx) => {
+      const date = new Date(2025, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const preview = `Complete guide on ${title.toLowerCase()}. Learn tips, tricks, and expert advice to grow your IPTV business.`;
+      return `<div class="panel-card"><div class="card-header"><h3>${title}</h3></div><div class="card-body"><p style="color:#64748b; font-size:0.75rem; margin-bottom:8px;"><i class="far fa-calendar-alt"></i> ${date}</p><div class="description">${preview}</div><a href="#" class="btn-outline" style="margin-top:16px; display:inline-block;">Read More →</a></div></div>`;
+    }).join('');
+  }
+</script>
+</body>
+</html>
