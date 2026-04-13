@@ -67,9 +67,11 @@
     <div class="feature-card"><div class="feature-icon"><i class="fas fa-gift"></i></div><h3>Free Trials</h3><p>Test any panel with a 24h free trial before you commit.</p></div>
     <div class="feature-card"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>24/7 Support</h3><p>Dedicated WhatsApp and Telegram support for all resellers.</p></div>
   </div>
-  <h2 class="section-title">🔥 Popular Panels</h2>
-  <p class="section-sub">Most requested panels by our resellers</p>
-  <div class="panels-grid" id="featuredPanelsGrid"></div>
+
+  <!-- ALL PRODUCTS SECTION - DISPLAYS ALL PANELS -->
+  <h2 class="section-title">🔥 All Premium IPTV Panels</h2>
+  <p class="section-sub">Browse our complete collection of high‑performance panels</p>
+  <div class="panels-grid" id="allPanelsGrid"></div>
 </div>
 
 <footer>
@@ -77,5 +79,22 @@
   <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform. All rights reserved.</p>
   <p style="margin-top:12px;">Contact via WhatsApp or Telegram for instant support and free trials.</p>
 </footer>
+
+<script src="panels-data.js"></script>
+<script>
+  // Function to create subscription card (same as subscription.html)
+  function createSubscriptionCard(p) {
+    const trialMsg = `Hello, I would like to request a FREE TRIAL for ${p.name}. Please provide access. Thank you!`;
+    return `<div class="panel-card"><div class="card-header"><h3>${p.name} <span class="rating">⭐ ${p.rating}</span></h3></div><div class="card-body"><div class="stats"><span>📺 ${p.channels}</span><span>🎬 ${p.movies}</span>${p.series !== "0" ? `<span>📺 ${p.series}</span>` : ''}</div><div class="description">${p.description}</div><ul class="features">${p.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}</ul><div class="price">${p.subPrice} <small>/ 1 year</small></div><div class="btn-group"><a href="https://wa.me/212670969192?text=${encodeURIComponent(trialMsg)}" target="_blank" class="btn-trial"><i class="fas fa-gift"></i> Free Trial</a><a href="https://wa.me/212670969192?text=Hello%2C%20I%20want%20to%20subscribe%20to%20${encodeURIComponent(p.name)}%20for%20${encodeURIComponent(p.subPrice)}.%20Please%20send%20payment%20details." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/OTTDistributor?text=Hello%2C%20I%20want%20to%20subscribe%20to%20${encodeURIComponent(p.name)}%20for%20${encodeURIComponent(p.subPrice)}." target="_blank" class="btn-tg"><i class="fab fa-telegram"></i> Telegram</a></div></div></div>`;
+  }
+
+  // Render all panels on homepage
+  const allPanelsGrid = document.getElementById('allPanelsGrid');
+  if (allPanelsGrid && typeof panels !== 'undefined') {
+    allPanelsGrid.innerHTML = panels.map(p => createSubscriptionCard(p)).join('');
+  } else if (allPanelsGrid) {
+    allPanelsGrid.innerHTML = '<p>Loading panels data...</p>';
+  }
+</script>
 </body>
 </html>
