@@ -40,8 +40,62 @@
   <div class="official-text"><i class="fas fa-check-circle"></i> OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.</div>
   <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform.</p>
 </footer>
-<script src="blog-data.js"></script>
 <script>
+  // Embedded blog posts (no external file needed)
+  const blogPosts = [
+    { title: "How to Start an IPTV Reseller Business", date: "January 15, 2025", preview: "Complete step-by-step guide to launching your own IPTV reselling business. Learn about panels, credits, and marketing." },
+    { title: "Top 10 IPTV Players for 2025", date: "January 20, 2025", preview: "The best IPTV players for Firestick, Android, iOS, Smart TV, and PC. Tivimate, IPTV Smarters, and more." },
+    { title: "Understanding IPTV Credit System", date: "January 25, 2025", preview: "How wholesale credits work and how to maximize your profit margins as a reseller." },
+    { title: "Best Panels for 4K Streaming", date: "February 1, 2025", preview: "Compare Dream 4K, Trex, and 8K Strong for ultra HD streaming quality." },
+    { title: "IPTV vs Cable: Which is Better?", date: "February 5, 2025", preview: "Cost comparison, channel selection, and flexibility of IPTV versus traditional cable." },
+    { title: "How to Increase IPTV Reseller Profits", date: "February 10, 2025", preview: "Proven strategies to boost your monthly recurring revenue." },
+    { title: "Beginner's Guide to IPTV", date: "February 15, 2025", preview: "Everything you need to know before buying your first IPTV subscription." },
+    { title: "Trex IPTV Full Review", date: "February 20, 2025", preview: "In-depth review of the most popular IPTV panel with 42,500+ channels." },
+    { title: "8K Strong Panel Features", date: "February 25, 2025", preview: "Why 8K Strong is the best choice for high-resolution streaming." },
+    { title: "Crystal OTT vs Magnum OTT", date: "March 1, 2025", preview: "Head-to-head comparison of two stable USA-focused panels." },
+    { title: "Dream 4K IPTV Channel List", date: "March 5, 2025", preview: "Complete list of channels, movies, and series available on Dream 4K." },
+    { title: "Eagle IPTV Installation Guide", date: "March 10, 2025", preview: "Step-by-step setup for Eagle IPTV on all devices." },
+    { title: "ProMax Panel Reseller Tips", date: "March 15, 2025", preview: "How to sell ProMax subscriptions and earn maximum profit." },
+    { title: "Tivione Setup on Firestick", date: "March 20, 2025", preview: "Easy installation guide for Tivione on Amazon Fire TV Stick." },
+    { title: "Mega OTT vs Infinity IPTV", date: "March 25, 2025", preview: "Which panel offers better value for resellers and subscribers?" },
+    { title: "Max OTT Channel Categories", date: "April 1, 2025", preview: "Explore the 31,200+ channels organized by genre and country." },
+    { title: "Nexon IPTV for Latin America", date: "April 5, 2025", preview: "Why Nexon is the best-selling panel in Spain and Latin America." },
+    { title: "How to Get Free IPTV Trials", date: "April 10, 2025", preview: "Step-by-step to request and activate 24h free trials on any panel." },
+    { title: "Best IPTV for Sports Fans", date: "April 15, 2025", preview: "Top panels for live sports, PPV events, and 4K sports channels." },
+    { title: "IPTV for USA/Canada Users", date: "April 20, 2025", preview: "Best panels optimized for North American viewers." },
+    { title: "EPG and Catch-up Explained", date: "April 25, 2025", preview: "What is Electronic Program Guide and catch-up TV? How to use them." },
+    { title: "How to Use Tivimate with IPTV", date: "May 1, 2025", preview: "Complete Tivimate setup guide for IPTV subscriptions." },
+    { title: "Reseller Dashboard Walkthrough", date: "May 5, 2025", preview: "How to manage customers, create subscriptions, and view analytics." },
+    { title: "Wholesale Credits Strategy", date: "May 10, 2025", preview: "Best practices for buying and selling wholesale credits." },
+    { title: "How to Sell IPTV Subscriptions", date: "May 15, 2025", preview: "Marketing tips to attract customers and close sales." },
+    { title: "IPTV Payment Methods Guide", date: "May 20, 2025", preview: "Cryptocurrency, PayPal, credit cards, and bank transfers explained." },
+    { title: "Avoid IPTV Scams", date: "May 25, 2025", preview: "Red flags to watch out for when choosing an IPTV provider." },
+    { title: "Best IPTV for Arabic Channels", date: "June 1, 2025", preview: "Top panels with Arabic, MBC, BeIN Sports, and more." },
+    { title: "IPTV for European Channels", date: "June 5, 2025", preview: "Best panels for UK, Germany, France, Italy, and Spain." },
+    { title: "How to Renew IPTV Subscription", date: "June 10, 2025", preview: "Simple steps to renew your subscription or reseller credits." },
+    { title: "IPTV on Smart TV", date: "June 15, 2025", preview: "Install IPTV apps on LG, Samsung, Sony, and other Smart TVs." },
+    { title: "IPTV on Android Box", date: "June 20, 2025", preview: "Best Android TV boxes for IPTV streaming." },
+    { title: "IPTV on iOS Devices", date: "June 25, 2025", preview: "How to watch IPTV on iPhone and iPad." },
+    { title: "IPTV on MAG Devices", date: "July 1, 2025", preview: "MAG box setup and configuration for IPTV." },
+    { title: "IPTV on Enigma2", date: "July 5, 2025", preview: "Enigma2 receiver setup for IPTV subscriptions." },
+    { title: "How to Backup IPTV Playlist", date: "July 10, 2025", preview: "Protect your M3U playlist and settings." },
+    { title: "How to Add EPG to IPTV", date: "July 15, 2025", preview: "Manually add Electronic Program Guide to any IPTV player." },
+    { title: "Best IPTV for PPV Events", date: "July 20, 2025", preview: "Watch UFC, Boxing, WWE, and other pay-per-view events." },
+    { title: "IPTV with VPN: Do You Need It?", date: "July 25, 2025", preview: "Pros and cons of using a VPN with IPTV." },
+    { title: "How to Test IPTV Before Buying", date: "August 1, 2025", preview: "Use free trials to evaluate panel quality and support." },
+    { title: "IPTV Reseller Success Stories", date: "August 5, 2025", preview: "Real examples of resellers making $3,000+ monthly." },
+    { title: "How to Get IPTV Support 24/7", date: "August 10, 2025", preview: "Contact methods and response times for technical issues." },
+    { title: "IPTV Channel List Updates", date: "August 15, 2025", preview: "How often are channels added or removed?" },
+    { title: "How to Create IPTV M3U Link", date: "August 20, 2025", preview: "Generate and customize your M3U playlist URL." },
+    { title: "How to Use IPTV with VLC", date: "August 25, 2025", preview: "Watch IPTV streams directly on VLC media player." },
+    { title: "Best IPTV for Movies and Series", date: "September 1, 2025", preview: "Panels with the largest VOD libraries (100K+ movies)." },
+    { title: "IPTV for Kids Channels", date: "September 5, 2025", preview: "Family-friendly panels with cartoons and educational content." },
+    { title: "How to Monetize IPTV Reselling", date: "September 10, 2025", preview: "Create recurring income streams with subscriptions." },
+    { title: "IPTV Industry Trends 2025", date: "September 15, 2025", preview: "What's new in IPTV technology and reselling." },
+    { title: "Why Choose OTT Distributor", date: "September 20, 2025", preview: "Benefits of partnering with us for your IPTV business." },
+    { title: "How to Get a Free Trial on Any Panel", date: "September 25, 2025", preview: "Step-by-step to request trials on Trex, 8K Strong, Dream 4K, and more." }
+  ];
+
   function renderBlogPosts(posts) {
     const grid = document.getElementById('blogGrid');
     if (!grid) return;
@@ -56,7 +110,9 @@
       </div>
     `).join('');
   }
+
   renderBlogPosts(blogPosts);
+
   const searchInput = document.getElementById('blogSearch');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
