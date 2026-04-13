@@ -3,260 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Page Title</title>
+  <title>OTT Distributor | Home - Premium IPTV Reseller & Subscriptions</title>
+  <meta name="description" content="OTTDistributor: The leading IPTV reseller platform. Start your business with Trex, 8K Strong, Dream 4K and more. Free trials, wholesale credits, 24/7 support.">
+  <meta name="keywords" content="OTT distributor, IPTV reseller, IPTV subscriptions, wholesale IPTV, reseller credits">
+  <link rel="canonical" href="https://ottdistributor.net/">
+  <meta property="og:title" content="OTTDistributor - Premium IPTV Reseller & Subscriptions">
+  <meta property="og:description" content="Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ottdistributor.net/">
+  <meta name="twitter:card" content="summary_large_image">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="main.js" defer></script>
-</head>
-    /* ========== GLOBAL STYLES (same for all pages) ========== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
-      line-height: 1.5;
-    }
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
-    .header {
-      background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      max-width: 1400px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #0f172a, #3b82f6);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-decoration: none;
-    }
-    .nav-menu {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-    .nav-menu a {
-      text-decoration: none;
-      color: #1e293b;
-      font-weight: 500;
-      transition: color 0.2s;
-      font-size: 0.95rem;
-    }
-    .nav-menu a:hover, .nav-menu a.active { color: #2563eb; }
-    .info-banner {
-      background: linear-gradient(135deg, #eef2ff, #ffffff, #e0e7ff);
-      background-size: 200% 200%;
-      animation: gradientShift 8s ease infinite;
-      text-align: center;
-      padding: 48px 24px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .info-banner h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; color: #0f172a; }
-    .info-banner p { font-size: 1.1rem; color: #334155; max-width: 700px; margin: 0 auto 28px; }
-    .banner-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary, .btn-secondary {
-      padding: 12px 32px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .btn-primary { background: #2563eb; color: white; box-shadow: 0 2px 8px rgba(37,99,235,0.2); }
-    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
-    .btn-secondary { background: #0f172a; color: white; }
-    .btn-secondary:hover { background: #1e293b; transform: translateY(-2px); }
-    .hero-slideshow {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      overflow: hidden;
-      background: #0f172a;
-    }
-    .slide-hero {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      background-size: cover;
-      background-position: center;
-    }
-    .slide-hero.active { opacity: 1; z-index: 2; }
-    .slide-content {
-      max-width: 800px;
-      padding: 0 24px;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      border-radius: 32px;
-      padding: 40px 32px;
-    }
-    .slide-content h2 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; }
-    .slide-content p { font-size: 1.2rem; margin-bottom: 24px; opacity: 0.9; }
-    .slide-content .btn-light {
-      background: white;
-      color: #0f172a;
-      padding: 12px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      transition: transform 0.2s;
-    }
-    .slide-content .btn-light:hover { transform: translateY(-3px); background: #f1f5f9; }
-    .prev-slide, .next-slide {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      font-size: 2rem;
-      padding: 12px 18px;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 50%;
-      transition: 0.2s;
-    }
-    .prev-slide { left: 20px; }
-    .next-slide { right: 20px; }
-    .prev-slide:hover, .next-slide:hover { background: rgba(0,0,0,0.8); }
-    .dots-hero {
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      z-index: 10;
-    }
-    .dot-hero {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin: 0 6px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 50%;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .dot-hero.active { background: white; transform: scale(1.2); }
-    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; text-align: center; }
-    .section-sub { text-align: center; color: #475569; margin-bottom: 48px; }
-    .panels-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 32px;
-      margin: 40px 0;
-    }
-    .panel-card {
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid #eef2ff;
-    }
-    .panel-card:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12); }
-    .card-header {
-      background: linear-gradient(135deg, #f1f5f9, #ffffff);
-      padding: 20px 24px;
-      border-bottom: 1px solid #eef2ff;
-    }
-    .card-header h3 { font-size: 1.6rem; font-weight: 700; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-    .rating { font-size: 0.85rem; background: #eef2ff; padding: 4px 10px; border-radius: 30px; color: #2563eb; }
-    .card-body { padding: 20px 24px; }
-    .description { color: #334155; margin-bottom: 16px; font-size: 0.9rem; line-height: 1.45; }
-    .stats { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.75rem; color: #4b5563; margin-bottom: 16px; background: #f8fafc; padding: 8px 12px; border-radius: 20px; }
-    .price { font-size: 1.9rem; font-weight: 800; color: #0f172a; margin: 12px 0; }
-    .price small { font-size: 0.9rem; font-weight: 400; color: #64748b; }
-    .features { list-style: none; margin: 16px 0; }
-    .features li { padding: 6px 0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
-    .features li i.fa-check { color: #10b981; width: 18px; }
-    .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-    .btn-wa, .btn-tg, .btn-trial {
-      flex: 1;
-      min-width: 100px;
-      padding: 10px 12px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-align: center;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: transform 0.2s, opacity 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-wa { background: #25D366; color: white; }
-    .btn-tg { background: #0088cc; color: white; }
-    .btn-trial { background: #f59e0b; color: white; }
-    .btn-wa:hover, .btn-tg:hover, .btn-trial:hover { transform: translateY(-2px); opacity: 0.9; }
-    footer {
-      background: #0f172a;
-      color: #94a3b8;
-      text-align: center;
-      padding: 32px;
-      margin-top: 40px;
-    }
-    .official-text {
-      background: #1e293b;
-      padding: 12px;
-      border-radius: 40px;
-      margin: 16px auto;
-      max-width: 90%;
-      font-size: 0.85rem;
-      color: #facc15;
-    }
-    @media (max-width: 768px) {
-      .nav { flex-direction: column; align-items: stretch; }
-      .nav-menu { justify-content: center; gap: 16px; }
-      .info-banner h2 { font-size: 1.6rem; }
-      .hero-slideshow { height: 450px; }
-      .slide-content h2 { font-size: 1.8rem; }
-      .slide-content p { font-size: 1rem; }
-      .prev-slide, .next-slide { font-size: 1.5rem; padding: 8px 12px; }
-      .panels-grid { grid-template-columns: 1fr; }
-      .card-header h3 { font-size: 1.3rem; flex-direction: column; gap: 8px; }
-      .btn-group { flex-direction: column; }
-      .btn-wa, .btn-tg, .btn-trial { width: 100%; }
-    }
-  </style>
 </head>
 <body>
 <header class="header">
@@ -266,8 +25,8 @@
       <li><a href="index.html" class="active">🏠 Home</a></li>
       <li><a href="reseller.html">👑 Reseller Plans</a></li>
       <li><a href="subscription.html">📺 Subscriptions</a></li>
-      <li><a href="#faq">❓ FAQ</a></li>
-      <li><a href="#contact">📞 Contact</a></li>
+      <li><a href="index.html#faq">❓ FAQ</a></li>
+      <li><a href="index.html#contact">📞 Contact</a></li>
       <li><a href="blog.html">📝 Blog</a></li>
     </ul>
   </div>
@@ -312,7 +71,7 @@
 <div id="faq" class="container" style="margin-top: 60px;">
   <h2 class="section-title">❓ Frequently Asked Questions</h2>
   <p class="section-sub">Everything you need to know about our panels, trials, and reseller plans.</p>
-  <div class="faq-grid" id="faqContainer" style="max-width: 900px; margin: 0 auto;"></div>
+  <div class="faq-grid" id="faqContainer"></div>
 </div>
 
 <!-- Contact Section -->
@@ -341,20 +100,7 @@
 </footer>
 
 <script>
-  // Slideshow
-  const slides = document.querySelectorAll('.slide-hero');
-  const dotsContainer = document.getElementById('dotsHero');
-  let currentIndex = 0, autoInterval;
-  function createDots() { if(!dotsContainer) return; dotsContainer.innerHTML = ''; slides.forEach((_, i) => { const dot = document.createElement('span'); dot.classList.add('dot-hero'); if (i === currentIndex) dot.classList.add('active'); dot.addEventListener('click', () => goToSlide(i)); dotsContainer.appendChild(dot); }); }
-  function goToSlide(index) { slides.forEach((s, i) => { s.classList.remove('active'); if(dotsContainer && dotsContainer.children[i]) dotsContainer.children[i].classList.remove('active'); }); currentIndex = (index + slides.length) % slides.length; slides[currentIndex].classList.add('active'); if(dotsContainer && dotsContainer.children[currentIndex]) dotsContainer.children[currentIndex].classList.add('active'); resetAutoSlide(); }
-  function nextSlide() { goToSlide(currentIndex + 1); }
-  function prevSlide() { goToSlide(currentIndex - 1); }
-  function resetAutoSlide() { if (autoInterval) clearInterval(autoInterval); autoInterval = setInterval(() => nextSlide(), 6000); }
-  document.getElementById('prevSlide')?.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
-  document.getElementById('nextSlide')?.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-  createDots(); goToSlide(0); resetAutoSlide();
-
-  // FAQ Data
+  // FAQ data injection (remains inline because it's page-specific)
   const faqData = [
     { q: "How do I get a free trial?", a: "Click the 'Free Trial' button on any panel card. You'll be redirected to WhatsApp or Telegram — just send a message with your preferred panel name and we'll activate a 24h trial instantly." },
     { q: "What payment methods do you accept?", a: "We accept Cryptocurrency (USDT, BTC), PayPal, Credit Card, Bank Transfer, and Western Union." },
@@ -371,28 +117,12 @@
   ];
   const faqContainer = document.getElementById('faqContainer');
   if (faqContainer) {
-    faqContainer.innerHTML = faqData.map((item, idx) => `<div class="faq-item" style="border-bottom:1px solid #e2e8f0; padding:16px 0;"><div class="faq-question" style="font-weight:700; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" data-idx="${idx}"><span>${item.q}</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer" id="faqAns${idx}" style="max-height:0; overflow:hidden; transition:max-height 0.3s; color:#475569;">${item.a}</div></div>`).join('');
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const idx = q.getAttribute('data-idx');
-        const answer = document.getElementById(`faqAns${idx}`);
-        const icon = q.querySelector('i');
-        answer.classList.toggle('active');
-        if (answer.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + "px"; icon.style.transform = 'rotate(180deg)'; }
-        else { answer.style.maxHeight = null; icon.style.transform = 'rotate(0deg)'; }
-      });
-    });
-  }
-  // Contact form
-  const contactForm = document.getElementById('contactForm');
-  const contactMsg = document.getElementById('contactFormMessage');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      contactMsg.innerHTML = '<span style="color:#10b981;">✅ Thank you! We will get back to you within 24 hours.</span>';
-      contactForm.reset();
-      setTimeout(() => contactMsg.innerHTML = '', 5000);
-    });
+    faqContainer.innerHTML = faqData.map((item, idx) => `
+      <div class="faq-item">
+        <div class="faq-question" data-idx="${idx}"><span>${item.q}</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer" id="faqAns${idx}">${item.a}</div>
+      </div>
+    `).join('');
   }
 </script>
 </body>
