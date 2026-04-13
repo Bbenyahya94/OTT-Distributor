@@ -7,60 +7,23 @@
   <meta name="description" content="Get premium IPTV subscriptions for Trex, 8K Strong, Dream 4K and more. 1-year plans with 4K/8K streaming, EPG, and 24/7 support.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>/* same global styles as reseller.html */</style>
-  <style>
-    /* Copy all styles from reseller.html (same) */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.5; }
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
-    .header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #e2e8f0; }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; gap: 16px; }
-    .logo { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #0f172a, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; }
-    .nav-menu { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-menu a { text-decoration: none; color: #1e293b; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
-    .nav-menu a:hover, .nav-menu a.active { color: #2563eb; }
-    .info-banner { background: linear-gradient(135deg, #eef2ff, #ffffff, #e0e7ff); text-align: center; padding: 48px 24px; border-bottom: 1px solid #e2e8f0; }
-    .info-banner h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
-    .info-banner p { font-size: 1.1rem; color: #334155; max-width: 700px; margin: 0 auto; }
-    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; text-align: center; }
-    .section-sub { text-align: center; color: #475569; margin-bottom: 48px; }
-    .panels-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px; margin: 40px 0; }
-    .panel-card { background: white; border-radius: 28px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.04); transition: transform 0.2s; border: 1px solid #eef2ff; }
-    .panel-card:hover { transform: translateY(-6px); }
-    .card-header { background: linear-gradient(135deg, #f1f5f9, #ffffff); padding: 20px 24px; border-bottom: 1px solid #eef2ff; }
-    .card-header h3 { font-size: 1.6rem; font-weight: 700; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-    .rating { font-size: 0.85rem; background: #eef2ff; padding: 4px 10px; border-radius: 30px; color: #2563eb; }
-    .card-body { padding: 20px 24px; }
-    .description { color: #334155; margin-bottom: 16px; font-size: 0.9rem; }
-    .stats { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.75rem; color: #4b5563; margin-bottom: 16px; background: #f8fafc; padding: 8px 12px; border-radius: 20px; }
-    .price { font-size: 1.9rem; font-weight: 800; color: #0f172a; margin: 12px 0; }
-    .price small { font-size: 0.9rem; font-weight: 400; color: #64748b; }
-    .features { list-style: none; margin: 16px 0; }
-    .features li { padding: 6px 0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
-    .features li i.fa-check { color: #10b981; width: 18px; }
-    .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-    .btn-wa, .btn-tg, .btn-trial { flex: 1; min-width: 100px; padding: 10px 12px; border-radius: 40px; font-weight: 600; font-size: 0.8rem; text-align: center; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: transform 0.2s; cursor: pointer; border: none; }
-    .btn-wa { background: #25D366; color: white; }
-    .btn-tg { background: #0088cc; color: white; }
-    .btn-trial { background: #f59e0b; color: white; }
-    .btn-wa:hover, .btn-tg:hover, .btn-trial:hover { transform: translateY(-2px); opacity: 0.9; }
-    footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 32px; margin-top: 40px; }
-    .official-text { background: #1e293b; padding: 12px; border-radius: 40px; margin: 16px auto; max-width: 90%; font-size: 0.85rem; color: #facc15; }
-    @media (max-width: 768px) { .nav { flex-direction: column; } .nav-menu { justify-content: center; gap: 16px; } .panels-grid { grid-template-columns: 1fr; } .btn-group { flex-direction: column; } .btn-wa, .btn-tg, .btn-trial { width: 100%; } }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 <header class="header">
   <div class="nav">
     <a href="index.html" class="logo">OTT<span style="color:#3b82f6;">Distributor</span></a>
-    <ul class="nav-menu">
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">🏠 Home</a></li>
       <li><a href="reseller.html">👑 Reseller Plans</a></li>
       <li><a href="subscription.html" class="active">📺 Subscriptions</a></li>
-      <li><a href="index.html#faq">❓ FAQ</a></li>
-      <li><a href="index.html#contact">📞 Contact</a></li>
       <li><a href="blog.html">📝 Blog</a></li>
+      <li><a href="faq.html">❓ FAQ</a></li>
+      <li><a href="contact.html">📞 Contact</a></li>
     </ul>
+    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
   </div>
 </header>
 <div class="info-banner">
@@ -74,23 +37,8 @@
   <div class="official-text"><i class="fas fa-check-circle"></i> OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.</div>
   <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform.</p>
 </footer>
+<script src="panels-data.js"></script>
 <script>
-  const panels = [
-    { name: "Trex IPTV", rating: 4.9, channels: "42,500+", movies: "110,000+", series: "18,500+", description: "Most popular panel with largest library.", features: ["4K/8K Streaming", "Anti-freeze", "M3U + MAG"], subPrice: "€49/year" },
-    { name: "8K Strong", rating: 4.9, channels: "34,261+", movies: "123,499+", series: "0", description: "Premium 8K streaming, instant activation.", features: ["8K Streaming", "Global CDN", "Catch-up"], subPrice: "€50/year" },
-    { name: "Dino IPTV", rating: 4.5, channels: "29,800+", movies: "75,000+", series: "10,000+", description: "Affordable panel with free trial.", features: ["Affordable", "EPG Support", "Multi-device"], subPrice: "€40/year" },
-    { name: "Lion OTT", rating: 4.7, channels: "18,484+", movies: "86,126+", series: "22,555+", description: "Stable streaming, large VOD library.", features: ["Multi-Device", "Large VOD", "24/7 Support"], subPrice: "€45/year" },
-    { name: "Crystal OTT", rating: 4.7, channels: "33,500+", movies: "90,000+", series: "13,000+", description: "Clear stream, anti-freeze technology.", features: ["Anti-freeze", "Quick Support", "1 Credit/Year"], subPrice: "€45/year" },
-    { name: "Magnum OTT", rating: 4.8, channels: "21,141+", movies: "106,175+", series: "0", description: "Very stable for USA/Canada.", features: ["USA Stable", "Free Apps", "High Uptime"], subPrice: "€45/year" },
-    { name: "Dream 4K", rating: 4.9, channels: "39,800+", movies: "102,000+", series: "18,000+", description: "Ultra HD 4K/8K, Dolby Audio.", features: ["4K/8K", "No Buffering", "PPV Events"], subPrice: "€55/year" },
-    { name: "Eagle IPTV", rating: 4.7, channels: "12,620+", movies: "42,005+", series: "9,419+", description: "Stable streaming, fast activation.", features: ["Fast Activation", "Catch-up", "Reseller Friendly"], subPrice: "€40/year" },
-    { name: "ProMax", rating: 4.8, channels: "36,200+", movies: "95,000+", series: "14,000+", description: "Max speed CDN, auto setup.", features: ["Max Speed CDN", "Auto Setup", "PPV Events"], subPrice: "€45/year" },
-    { name: "Tivione", rating: 4.5, channels: "28,700+", movies: "68,000+", series: "8,000+", description: "Tivimate compatible, easy install.", features: ["Tivimate Compatible", "Easy Install", "Affordable"], subPrice: "€40/year" },
-    { name: "Mega OTT", rating: 4.8, channels: "28,500+", movies: "95,000+", series: "12,000+", description: "Vast content library, stable.", features: ["Stable Streaming", "Large VOD", "24/7 Support"], subPrice: "€48/year" },
-    { name: "Infinity IPTV", rating: 4.8, channels: "37,800+", movies: "110,000+", series: "20,000+", description: "Endless content, live sports.", features: ["Latest Movies", "Live Sports", "Catch-up"], subPrice: "€50/year" },
-    { name: "Max OTT", rating: 4.6, channels: "31,200+", movies: "82,000+", series: "11,000+", description: "Maximum channels, API access.", features: ["Maximum Channels", "API Access", "12 Credits/Year"], subPrice: "€45/year" },
-    { name: "Nexon IPTV", rating: 4.7, channels: "17,200+", movies: "120,000+", series: "0", description: "Best-selling in Spain & Latin America.", features: ["Fast Activation", "Easy Management", "Large VOD"], subPrice: "€45/year" }
-  ];
   function createSubscriptionCard(p) {
     const trialMsg = `Hello, I would like to request a FREE TRIAL for ${p.name}. Please provide access. Thank you!`;
     return `<div class="panel-card"><div class="card-header"><h3>${p.name} <span class="rating">⭐ ${p.rating}</span></h3></div><div class="card-body"><div class="stats"><span>📺 ${p.channels}</span><span>🎬 ${p.movies}</span>${p.series !== "0" ? `<span>📺 ${p.series}</span>` : ''}</div><div class="description">${p.description}</div><ul class="features">${p.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}</ul><div class="price">${p.subPrice} <small>/ 1 year</small></div><div class="btn-group"><a href="https://wa.me/212670969192?text=${encodeURIComponent(trialMsg)}" target="_blank" class="btn-trial"><i class="fas fa-gift"></i> Free Trial</a><a href="https://wa.me/212670969192?text=Hello%2C%20I%20want%20to%20subscribe%20to%20${encodeURIComponent(p.name)}%20for%20${encodeURIComponent(p.subPrice)}.%20Please%20send%20payment%20details." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/OTTDistributor?text=Hello%2C%20I%20want%20to%20subscribe%20to%20${encodeURIComponent(p.name)}%20for%20${encodeURIComponent(p.subPrice)}." target="_blank" class="btn-tg"><i class="fab fa-telegram"></i> Telegram</a></div></div></div>`;
