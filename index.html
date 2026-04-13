@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>OTTDistributor IPTV Reseller & IPTV Subscription</title>
-  <meta name="description" content="OTTDistributor IPTV Reseller and IPTV Subscription. Best prices, free trials, reseller credits. Trex, Strong 8K, Dream 4K & more.">
+  <title>OTTDistributor | Premium IPTV Reseller & Subscription Plans</title>
+  <meta name="description" content="OTTDistributor: The leading IPTV reseller platform. Start your business with Trex, 8K Strong, Dream 4K and more. Free trials, wholesale credits, 24/7 support.">
   <meta name="keywords" content="OTT distributor, IPTV reseller, IPTV subscriptions, wholesale IPTV, reseller credits, Trex IPTV, 8K Strong, Dino IPTV, Lion OTT, Crystal OTT, Magnum OTT, Dream 4K, Eagle IPTV, ProMax, Tivione, Mega OTT, Infinity IPTV, Max OTT, Nexon IPTV">
   <meta name="author" content="OTT Distributor">
   <meta name="robots" content="index, follow">
@@ -17,12 +17,10 @@
   <meta property="og:url" content="https://ottdistributor.net/">
   <meta name="twitter:card" content="summary_large_image">
   
-  <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* Animated auto — includes keyframe animations for banner, buttons, and auto slideshow */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
@@ -108,34 +106,6 @@
     .btn-secondary { background: #0f172a; color: white; }
     .btn-secondary:hover { background: #1e293b; transform: translateY(-2px); }
     
-    /* Panel List Strip with auto-scroll animation */
-    .panel-strip {
-      background: #0f172a;
-      color: white;
-      padding: 16px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      font-weight: 500;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: thin;
-      border-bottom: 2px solid #facc15;
-      animation: subtlePulse 2s infinite;
-    }
-    @keyframes subtlePulse {
-      0% { border-bottom-color: #facc15; }
-      50% { border-bottom-color: #ffd966; }
-      100% { border-bottom-color: #facc15; }
-    }
-    .panel-strip span {
-      display: inline-block;
-      margin: 0 8px;
-    }
-    .panel-strip i {
-      margin-right: 6px;
-      color: #facc15;
-    }
-    
     /* Hero Slideshow (auto-rotates via JavaScript) */
     .hero-slideshow {
       position: relative;
@@ -219,39 +189,13 @@
     }
     .dot-hero.active { background: white; transform: scale(1.2); }
     
-    /* Tabs */
-    .tab-bar {
-      background: #f1f5f9;
-      padding: 8px;
-      border-radius: 60px;
-      display: inline-flex;
-      margin: 24px auto 0;
-    }
-    .tab-buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: -30px;
-      position: relative;
-      z-index: 20;
-    }
-    .tab-btn {
-      padding: 12px 32px;
-      border: none;
-      background: transparent;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 40px;
-      cursor: pointer;
-      transition: all 0.2s;
-      color: #334155;
-    }
-    .tab-btn.active { background: white; color: #2563eb; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    
-    /* Pages */
+    /* Page Content & Layout */
     .page { display: none; padding: 48px 0 40px; }
     .page.active-page { display: block; }
     .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; text-align: center; }
     .section-sub { text-align: center; color: #475569; margin-bottom: 48px; }
+    
+    /* Grids */
     .panels-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -326,7 +270,7 @@
     .btn-trial { background: #f59e0b; color: white; }
     .btn-wa:hover, .btn-tg:hover, .btn-trial:hover { transform: translateY(-2px); opacity: 0.9; }
     
-    /* FAQ */
+    /* FAQ Section */
     .faq-section {
       background: white;
       padding: 60px 0;
@@ -375,18 +319,18 @@
       font-size: 0.85rem;
       color: #facc15;
     }
+    
+    /* Responsive */
     @media (max-width: 768px) {
       .info-banner h2 { font-size: 1.6rem; }
       .hero-slideshow { height: 450px; }
       .slide-content h2 { font-size: 1.8rem; }
       .slide-content p { font-size: 1rem; }
       .prev-slide, .next-slide { font-size: 1.5rem; padding: 8px 12px; }
-      .tab-btn { padding: 8px 20px; }
       .panels-grid { grid-template-columns: 1fr; }
       .card-header h3 { font-size: 1.3rem; flex-direction: column; gap: 8px; }
       .btn-group { flex-direction: column; }
       .btn-wa, .btn-tg, .btn-trial { width: 100%; }
-      .panel-strip { font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -397,43 +341,37 @@
   </div>
 </header>
 
-<!-- Banner with animated gradient background -->
+<!-- Global Banner -->
 <div class="info-banner">
   <h2>🚀 Premium IPTV Reseller & Subscription Plans</h2>
   <p>Choose your server, pick a plan (subscription or reseller credits), and start instantly via WhatsApp.</p>
   <div class="banner-buttons">
-    <button class="btn-primary" id="freeTrialBtn"><i class="fas fa-gem"></i> Get Free Trial</button>
-    <button class="btn-secondary" id="becomeResellerBtn"><i class="fas fa-chart-line"></i> Become Reseller</button>
+    <button class="btn-primary" id="globalFreeTrialBtn"><i class="fas fa-gem"></i> Get Free Trial</button>
+    <button class="btn-secondary" id="globalResellerBtn"><i class="fas fa-chart-line"></i> Become Reseller</button>
   </div>
 </div>
 
-<!-- Full list of panels with auto-pulsing border -->
-<div class="panel-strip">
-  <i class="fas fa-server"></i> <strong>Official Reseller & Subscriptions for:</strong>
-  <span>Trex IPTV</span> • <span>8K Strong</span> • <span>Dino IPTV (TVPlus)</span> • <span>Lion OTT</span> • <span>Crystal OTT</span> • <span>Magnum OTT</span> • <span>Dream 4K IPTV</span> • <span>Eagle IPTV</span> • <span>ProMax (4K OTT / Cobra OTT)</span> • <span>Tivione</span> • <span>Mega OTT</span> • <span>Infinity IPTV</span> • <span>Max OTT</span> • <span>Nexon IPTV</span>
-</div>
-
-<!-- Hero Slideshow (auto-rotates every 6 seconds) -->
+<!-- Hero Slideshow -->
 <div class="hero-slideshow" id="heroSlideshow">
   <div class="slide-hero active" style="background-image: linear-gradient(135deg, #1e293b, #0f172a), url('https://picsum.photos/id/104/1920/600'); background-blend-mode: overlay;">
     <div class="slide-content">
       <h2>Free Trials Available</h2>
       <p>Test any panel for free before you buy. No commitment, instant access.</p>
-      <a href="#subscriptions" class="btn-light" id="heroSubsBtn">Get Free Trial →</a>
+      <a href="#" class="btn-light hero-subs-link">Get Free Trial →</a>
     </div>
   </div>
   <div class="slide-hero" style="background-image: linear-gradient(135deg, #1e293b, #0f172a), url('https://picsum.photos/id/106/1920/600'); background-blend-mode: overlay;">
     <div class="slide-content">
       <h2>Reseller Wholesale Plans</h2>
       <p>Buy credits in bulk and earn up to 300% profit. Free reseller dashboard included.</p>
-      <a href="#reseller" class="btn-light" id="heroResellerBtn">Become a Reseller →</a>
+      <a href="#" class="btn-light hero-reseller-link">Become a Reseller →</a>
     </div>
   </div>
   <div class="slide-hero" style="background-image: linear-gradient(135deg, #1e293b, #0f172a), url('https://picsum.photos/id/20/1920/600'); background-blend-mode: overlay;">
     <div class="slide-content">
       <h2>Premium OTT Panels</h2>
       <p>15+ panels, 500K+ content, 4K/8K streaming. Subscribe now and enjoy the best.</p>
-      <a href="#subscriptions" class="btn-light">View Subscriptions →</a>
+      <a href="#" class="btn-light hero-subs-link">View Subscriptions →</a>
     </div>
   </div>
   <button class="prev-slide" id="prevSlide">❮</button>
@@ -441,42 +379,104 @@
   <div class="dots-hero" id="dotsHero"></div>
 </div>
 
-<!-- Tabs -->
+<!-- Page Navigation Tabs -->
 <div class="tab-buttons container">
   <div class="tab-bar">
-    <button class="tab-btn active" id="tabSubsBtn">📺 Subscriptions</button>
-    <button class="tab-btn" id="tabResellerBtn">👑 Reseller Plans</button>
+    <button class="tab-btn active" data-page="home">🏠 Home</button>
+    <button class="tab-btn" data-page="reseller">👑 Reseller Plans</button>
+    <button class="tab-btn" data-page="subscriptions">📺 Subscriptions</button>
+    <button class="tab-btn" data-page="faq">❓ FAQ</button>
+    <button class="tab-btn" data-page="contact">📞 Contact</button>
+    <button class="tab-btn" data-page="blog">📝 Blog</button>
   </div>
 </div>
 
 <main>
-  <!-- Subscriptions Page -->
-  <div id="subscriptionsPage" class="page active-page">
+  <!-- ======================== HOME PAGE ======================== -->
+  <div id="homePage" class="page active-page">
     <div class="container">
-      <h2 class="section-title">Premium OTT Subscriptions</h2>
+      <h2 class="section-title">Welcome to OTT Distributor</h2>
+      <p class="section-sub">Your #1 source for premium IPTV reseller panels and subscriptions.</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 60px;">
+        <div class="panel-card"><div class="card-header"><h3>15+ Premium Panels</h3></div><div class="card-body"><p>Access the best panels including Trex, 8K Strong, Dream 4K, Crystal OTT and more.</p></div></div>
+        <div class="panel-card"><div class="card-header"><h3>500K+ Content</h3></div><div class="card-body"><p>Millions of movies, series, and live channels from around the world.</p></div></div>
+        <div class="panel-card"><div class="card-header"><h3>Free Trials</h3></div><div class="card-body"><p>Test any panel with a 24h free trial before you commit.</p></div></div>
+        <div class="panel-card"><div class="card-header"><h3>24/7 Support</h3></div><div class="card-body"><p>Dedicated WhatsApp and Telegram support for all resellers.</p></div></div>
+      </div>
+      
+      <h2 class="section-title">🔥 Popular Panels</h2>
+      <p class="section-sub">Most requested panels by our resellers</p>
+      <div class="panels-grid" id="featuredPanelsGrid"></div>
+    </div>
+  </div>
+
+  <!-- ======================== RESELLER PAGE ======================== -->
+  <div id="resellerPage" class="page">
+    <div class="container">
+      <h2 class="section-title">👑 Wholesale Reseller Plans</h2>
+      <p class="section-sub">Buy credits in bulk and sell subscriptions at your own price. Profit margins up to 300%.</p>
+      <div class="panels-grid" id="resellerGrid"></div>
+    </div>
+  </div>
+
+  <!-- ======================== SUBSCRIPTIONS PAGE ======================== -->
+  <div id="subscriptionsPage" class="page">
+    <div class="container">
+      <h2 class="section-title">📺 Premium OTT Subscriptions</h2>
       <p class="section-sub">Choose your panel, get 1-year access with HD/4K streaming, EPG, and 24/7 support.</p>
       <div class="panels-grid" id="subscriptionsGrid"></div>
     </div>
   </div>
 
-  <!-- Reseller Page -->
-  <div id="resellerPage" class="page">
+  <!-- ======================== FAQ PAGE ======================== -->
+  <div id="faqPage" class="page">
     <div class="container">
-      <h2 class="section-title">Wholesale Reseller Plans</h2>
-      <p class="section-sub">Buy credits in bulk and sell subscriptions at your own price. Profit margins up to 300%.</p>
-      <div class="panels-grid" id="resellerGrid"></div>
+      <h2 class="section-title">❓ Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know about our panels, trials, and reseller plans.</p>
+      <div class="faq-grid" id="faqContainer"></div>
+    </div>
+  </div>
+
+  <!-- ======================== CONTACT PAGE ======================== -->
+  <div id="contactPage" class="page">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title">📞 Contact Us</h2>
+        <p class="section-sub">Get in touch with our support team. We're here 24/7 to help you.</p>
+        
+        <div style="background: white; border-radius: 32px; padding: 40px; margin-top: 32px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+          <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px;">
+            <div style="display: flex; align-items: center; gap: 16px;"><i class="fab fa-whatsapp fa-2x" style="color:#25D366;"></i><div><strong>WhatsApp Support</strong><br><a href="https://wa.me/212670969192" target="_blank">+212 670-969192</a></div></div>
+            <div style="display: flex; align-items: center; gap: 16px;"><i class="fab fa-telegram fa-2x" style="color:#0088cc;"></i><div><strong>Telegram Support</strong><br><a href="https://t.me/OTTDistributor" target="_blank">@OTTDistributor</a></div></div>
+            <div style="display: flex; align-items: center; gap: 16px;"><i class="fas fa-envelope fa-2x" style="color:#2563eb;"></i><div><strong>Email</strong><br>sales@ottdistributor.net</div></div>
+          </div>
+          
+          <form id="contactForm" style="display: flex; flex-direction: column; gap: 16px;">
+            <input type="text" placeholder="Your Name" required style="padding: 14px; border-radius: 40px; border: 1px solid #e2e8f0;">
+            <input type="email" placeholder="Your Email" required style="padding: 14px; border-radius: 40px; border: 1px solid #e2e8f0;">
+            <textarea rows="4" placeholder="Your Message" style="padding: 14px; border-radius: 24px; border: 1px solid #e2e8f0;"></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+          <div id="contactFormMessage" style="margin-top: 16px; text-align: center;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== BLOG PAGE ======================== -->
+  <div id="blogPage" class="page">
+    <div class="container">
+      <h2 class="section-title">📝 Latest News & Guides</h2>
+      <p class="section-sub">Tips, tutorials, and updates for IPTV resellers.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px;">
+        <div class="panel-card"><div class="card-header"><h3>How to Start an IPTV Reseller Business</h3></div><div class="card-body"><p>A complete step-by-step guide for beginners.</p><a href="#" class="btn-outline" style="margin-top: 16px; display: inline-block;">Read More →</a></div></div>
+        <div class="panel-card"><div class="card-header"><h3>Top 10 IPTV Players for 2025</h3></div><div class="card-body"><p>Best apps to stream your IPTV subscriptions.</p><a href="#" class="btn-outline" style="margin-top: 16px; display: inline-block;">Read More →</a></div></div>
+        <div class="panel-card"><div class="card-header"><h3>Understanding IPTV Credit System</h3></div><div class="card-body"><p>How wholesale credits work and how to maximize profits.</p><a href="#" class="btn-outline" style="margin-top: 16px; display: inline-block;">Read More →</a></div></div>
+      </div>
     </div>
   </div>
 </main>
-
-<!-- FAQ Section -->
-<section class="faq-section">
-  <div class="container">
-    <h2 class="section-title">❓ Frequently Asked Questions</h2>
-    <p class="section-sub">Everything you need to know about our panels, trials, and reseller plans.</p>
-    <div class="faq-grid" id="faqContainer"></div>
-  </div>
-</section>
 
 <footer>
   <div class="official-text">
@@ -505,6 +505,7 @@
     { id: "nexon", name: "Nexon IPTV", rating: 4.7, channels: "17,200+", movies: "120,000+", series: "0", description: "Best-selling in Spain & Latin America. Fast activation, easy management.", features: ["Fast Activation", "Easy Management", "Spain Optimized", "Large VOD"], subPrice: "€45/year", resellerCredits: "120 Credits", resellerPrice: "€100", creditRule: "12 credits = 1 year" }
   ];
 
+  // Helper functions
   function createSubscriptionCard(p) {
     const trialMsg = `Hello, I would like to request a FREE TRIAL for ${p.name}. Please provide access. Thank you!`;
     return `
@@ -551,41 +552,43 @@
     `;
   }
 
+  // Render grids
   const subsGrid = document.getElementById('subscriptionsGrid');
   const resellerGrid = document.getElementById('resellerGrid');
+  const featuredGrid = document.getElementById('featuredPanelsGrid');
   if (subsGrid) subsGrid.innerHTML = panels.map(p => createSubscriptionCard(p)).join('');
   if (resellerGrid) resellerGrid.innerHTML = panels.map(p => createResellerCard(p)).join('');
+  if (featuredGrid) featuredGrid.innerHTML = panels.slice(0, 4).map(p => createSubscriptionCard(p)).join('');
 
-  // Tab switching
-  const subsTab = document.getElementById('tabSubsBtn');
-  const resTab = document.getElementById('tabResellerBtn');
-  const subsPage = document.getElementById('subscriptionsPage');
-  const resPage = document.getElementById('resellerPage');
-  function setActiveTab(active) {
-    subsTab.classList.remove('active'); resTab.classList.remove('active');
-    if (active === 'subs') {
-      subsTab.classList.add('active'); subsPage.classList.add('active-page'); resPage.classList.remove('active-page');
-      window.location.hash = 'subscriptions';
-    } else {
-      resTab.classList.add('active'); resPage.classList.add('active-page'); subsPage.classList.remove('active-page');
-      window.location.hash = 'reseller';
-    }
+  // Page navigation
+  const pages = {
+    home: document.getElementById('homePage'),
+    reseller: document.getElementById('resellerPage'),
+    subscriptions: document.getElementById('subscriptionsPage'),
+    faq: document.getElementById('faqPage'),
+    contact: document.getElementById('contactPage'),
+    blog: document.getElementById('blogPage')
+  };
+  
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  function showPage(pageId) {
+    Object.keys(pages).forEach(id => { pages[id].classList.remove('active-page'); });
+    pages[pageId].classList.add('active-page');
+    tabBtns.forEach(btn => { btn.classList.remove('active'); if(btn.getAttribute('data-page') === pageId) btn.classList.add('active'); });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  subsTab.addEventListener('click', () => setActiveTab('subs'));
-  resTab.addEventListener('click', () => setActiveTab('reseller'));
-  document.getElementById('freeTrialBtn').addEventListener('click', () => { setActiveTab('subs'); document.getElementById('subscriptionsPage').scrollIntoView({ behavior: 'smooth' }); });
-  document.getElementById('becomeResellerBtn').addEventListener('click', () => { setActiveTab('reseller'); document.getElementById('resellerPage').scrollIntoView({ behavior: 'smooth' }); });
-  document.getElementById('heroSubsBtn')?.addEventListener('click', (e) => { e.preventDefault(); setActiveTab('subs'); subsPage.scrollIntoView({ behavior: 'smooth' }); });
-  document.getElementById('heroResellerBtn')?.addEventListener('click', (e) => { e.preventDefault(); setActiveTab('reseller'); resPage.scrollIntoView({ behavior: 'smooth' }); });
-  document.querySelectorAll('.btn-light').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const href = btn.getAttribute('href');
-      if (href === '#subscriptions') { e.preventDefault(); setActiveTab('subs'); subsPage.scrollIntoView({ behavior: 'smooth' }); }
-      if (href === '#reseller') { e.preventDefault(); setActiveTab('reseller'); resPage.scrollIntoView({ behavior: 'smooth' }); }
-    });
+  
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => { const page = btn.getAttribute('data-page'); if(pages[page]) showPage(page); });
   });
-
-  // Slideshow with auto-rotation
+  
+  // Global buttons
+  document.getElementById('globalFreeTrialBtn').addEventListener('click', () => showPage('subscriptions'));
+  document.getElementById('globalResellerBtn').addEventListener('click', () => showPage('reseller'));
+  document.querySelectorAll('.hero-subs-link').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); showPage('subscriptions'); }));
+  document.querySelectorAll('.hero-reseller-link').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); showPage('reseller'); }));
+  
+  // Slideshow
   const slides = document.querySelectorAll('.slide-hero');
   const dotsContainer = document.getElementById('dotsHero');
   let currentIndex = 0, autoInterval;
@@ -611,8 +614,8 @@
   document.getElementById('prevSlide').addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
   document.getElementById('nextSlide').addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
   createDots(); goToSlide(0); resetAutoSlide();
-
-  // FAQ
+  
+  // FAQ Data
   const faqData = [
     { q: "How do I get a free trial?", a: "Click the 'Free Trial' button on any panel card. You'll be redirected to WhatsApp or Telegram — just send a message with your preferred panel name and we'll activate a 24h trial instantly." },
     { q: "What payment methods do you accept?", a: "We accept Cryptocurrency (USDT, BTC), PayPal, Credit Card, Bank Transfer, and Western Union." },
@@ -627,6 +630,7 @@
     { q: "How do I contact support?", a: "24/7 via WhatsApp (+212 670-969192) or Telegram (@OTTDistributor)." },
     { q: "Are there any hidden fees?", a: "No hidden fees. The price you see is final — no setup or monthly fees." }
   ];
+  
   const faqContainer = document.getElementById('faqContainer');
   if (faqContainer) {
     faqContainer.innerHTML = faqData.map((item, idx) => `
@@ -645,8 +649,21 @@
       });
     });
   }
-  if (window.location.hash === '#reseller') setActiveTab('reseller');
-  else setActiveTab('subs');
+  
+  // Contact form
+  const contactForm = document.getElementById('contactForm');
+  const contactMsg = document.getElementById('contactFormMessage');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactMsg.innerHTML = '<span style="color:#10b981;">✅ Thank you! We will get back to you within 24 hours.</span>';
+      contactForm.reset();
+      setTimeout(() => contactMsg.innerHTML = '', 5000);
+    });
+  }
+  
+  // Set default page
+  showPage('home');
 </script>
 </body>
 </html>
