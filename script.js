@@ -1,85 +1,129 @@
-// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
-  if (mobileBtn && navMenu) {
-    mobileBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+  // Create mobile menu elements if they don't exist
+  const nav = document.querySelector('.nav');
+  const existingOverlay = document.querySelector('.mobile-menu-overlay');
+  if (!existingOverlay) {
+    // Build mobile menu structure
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-menu-overlay';
+    const backdrop = document.createElement('div');
+    backdrop.className = 'menu-backdrop';
+    document.body.appendChild(backdrop);
+    document.body.appendChild(overlay);
+    
+    // Copy navigation links
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      const clone = link.cloneNode(true);
+      overlay.appendChild(clone);
     });
-  }
-
-  // Dark mode toggle
-  const darkToggle = document.getElementById('darkModeToggle');
-  if (darkToggle) {
-    darkToggle.addEventListener('click', () => {
+    
+    // Add dark mode toggle inside mobile menu
+    const mobileDarkToggle = document.createElement('button');
+    mobileDarkToggle.className = 'mobile-dark-toggle';
+    const icon = document.createElement('i');
+    icon.className = localStorage.getItem('darkMode') === 'true' ? 'fas fa-sun' : 'fas fa-moon';
+    mobileDarkToggle.appendChild(icon);
+    mobileDarkToggle.appendChild(document.createTextNode(' Dark Mode'));
+    overlay.appendChild(mobileDarkToggle);
+    
+    // Toggle mobile menu
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        overlay.classList.toggle('active');
+        backdrop.classList.toggle('active');
+      });
+    }
+    
+    backdrop.addEventListener('click', () => {
+      overlay.classList.remove('active');
+      backdrop.classList.remove('active');
+    });
+    
+    // Dark mode toggle from mobile menu
+    mobileDarkToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-      const icon = darkToggle.querySelector('i');
-      if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      // Update icon
+      const iconElem = mobileDarkToggle.querySelector('i');
+      if (isDark) {
+        iconElem.classList.remove('fa-moon');
+        iconElem.classList.add('fa-sun');
       } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+        iconElem.classList.remove('fa-sun');
+        iconElem.classList.add('fa-moon');
       }
-      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
-    if (localStorage.getItem('darkMode') === 'true') {
-      document.body.classList.add('dark-mode');
-      darkToggle.querySelector('i').classList.remove('fa-moon');
-      darkToggle.querySelector('i').classList.add('fa-sun');
-    }
-  }
-
-  // Slideshow
-  const slides = document.querySelectorAll('.slide-hero');
-  const dotsContainer = document.getElementById('dotsHero');
-  if (slides.length && dotsContainer) {
-    let currentIndex = 0;
-    let autoInterval;
-    function createDots() {
-      dotsContainer.innerHTML = '';
-      slides.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot-hero');
-        if (i === currentIndex) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-      });
-    }
-    function goToSlide(index) {
-      slides.forEach((s, i) => {
-        s.classList.remove('active');
-        if (dotsContainer.children[i]) dotsContainer.children[i].classList.remove('active');
-      });
-      currentIndex = (index + slides.length) % slides.length;
-      slides[currentIndex].classList.add('active');
-      if (dotsContainer.children[currentIndex]) dotsContainer.children[currentIndex].classList.add('active');
-      resetAutoSlide();
-    }
-    function nextSlide() { goToSlide(currentIndex + 1); }
-    function prevSlide() { goToSlide(currentIndex - 1); }
-    function resetAutoSlide() {
-      if (autoInterval) clearInterval(autoInterval);
-      autoInterval = setInterval(() => nextSlide(), 6000);
-    }
-    const prevBtn = document.getElementById('prevSlide');
-    const nextBtn = document.getElementById('nextSlide');
-    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
-    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-    createDots();
-    goToSlide(0);
-    resetAutoSlide();
-  }
-
-  // Contact form
-  const contactForm = document.getElementById('contactForm');
-  const contactMsg = document.getElementById('contactFormMessage');
-  if (contactForm && contactMsg) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      contactMsg.innerHTML = '<span style="color:#10b981;">✅ Thank you! We will get back to you within 24 hours.</span>';
-      contactForm.reset();
-      setTimeout(() => contactMsg.innerHTML = '', 5000);
+      // Also update desktop dark toggle if exists
+      const desktopToggle = document.querySelector('.desktop-dark-toggle');
+      if (desktopToggle) {
+        const deskIcon = desktopToggle.querySelector('i');
+        if (isDark) {
+          deskIcon.classList.remove('fa-moon');
+          deskIcon.classList.add('fa-sun');
+        } else {
+          deskIcon.classList.remove('fa-sun');
+          deskIcon.classList.add('fa-moon');
+        }
+      }
     });
   }
+  
+  // Desktop dark mode toggle (create if not exists)
+  let desktopToggle = document.querySelector('.desktop-dark-toggle');
+  if (!desktopToggle && window.innerWidth > 768) {
+    const headerRight = document.querySelector('.nav');
+    desktopToggle = document.createElement('button');
+    desktopToggle.className = 'desktop-dark-toggle';
+    const icon = document.createElement('i');
+    icon.className = localStorage.getItem('darkMode') === 'true' ? 'fas fa-sun' : 'fas fa-moon';
+    desktopToggle.appendChild(icon);
+    headerRight.appendChild(desktopToggle);
+    
+    desktopToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      const iconElem = desktopToggle.querySelector('i');
+      if (isDark) {
+        iconElem.classList.remove('fa-moon');
+        iconElem.classList.add('fa-sun');
+      } else {
+        iconElem.classList.remove('fa-sun');
+        iconElem.classList.add('fa-moon');
+      }
+      // Also update mobile dark toggle icon if exists
+      const mobileToggle = document.querySelector('.mobile-dark-toggle');
+      if (mobileToggle) {
+        const mobIcon = mobileToggle.querySelector('i');
+        if (isDark) {
+          mobIcon.classList.remove('fa-moon');
+          mobIcon.classList.add('fa-sun');
+        } else {
+          mobIcon.classList.remove('fa-sun');
+          mobIcon.classList.add('fa-moon');
+        }
+      }
+    });
+  }
+  
+  // Apply saved dark mode on load
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    const allToggles = document.querySelectorAll('.desktop-dark-toggle i, .mobile-dark-toggle i');
+    allToggles.forEach(icon => {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    });
+  }
+  
+  // Slideshow code (keep your existing slideshow logic)
+  // ... (your existing slideshow code here)
+  
+  // FAQ accordion (keep your existing FAQ code)
+  // ... (your existing FAQ code here)
+  
+  // Contact form (keep your existing form code)
+  // ... (your existing contact form code)
 });
