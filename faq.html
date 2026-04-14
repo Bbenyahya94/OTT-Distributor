@@ -13,7 +13,7 @@
 <body>
 <header class="header">
   <div class="nav">
-    <a href="index.html" class="logo">OTT<span style="color:#3b82f6;">Distributor</span></a>
+    <a href="index.html" class="logo"><span>OTT<span style="color:#3b82f6;">Distributor</span></span></a>
     <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">🏠 Home</a></li>
@@ -23,45 +23,36 @@
       <li><a href="faq.html" class="active">❓ FAQ</a></li>
       <li><a href="contact.html">📞 Contact</a></li>
     </ul>
-    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
   </div>
 </header>
+
+<div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+<div id="menuBackdrop" class="menu-backdrop"></div>
+
 <div class="info-banner">
   <h2>❓ Frequently Asked Questions</h2>
   <p>Everything you need to know about our panels, trials, and reseller plans.</p>
 </div>
+
 <div class="container">
   <div class="faq-grid" id="faqContainer"></div>
 </div>
+
 <footer>
   <div class="official-text"><i class="fas fa-check-circle"></i> OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.</div>
   <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform.</p>
 </footer>
+
 <script src="faq-data.js"></script>
 <script>
   const faqContainer = document.getElementById('faqContainer');
-  if (faqContainer) {
+  if (faqContainer && typeof faqData !== 'undefined') {
     faqContainer.innerHTML = faqData.map((item, idx) => `
       <div class="faq-item">
         <div class="faq-question" data-idx="${idx}"><span>${item.q}</span><i class="fas fa-chevron-down"></i></div>
         <div class="faq-answer" id="faqAns${idx}">${item.a}</div>
       </div>
     `).join('');
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const idx = q.getAttribute('data-idx');
-        const answer = document.getElementById(`faqAns${idx}`);
-        const icon = q.querySelector('i');
-        answer.classList.toggle('active');
-        if (answer.classList.contains('active')) {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          icon.style.transform = 'rotate(180deg)';
-        } else {
-          answer.style.maxHeight = null;
-          icon.style.transform = 'rotate(0deg)';
-        }
-      });
-    });
   }
 </script>
 </body>
