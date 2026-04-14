@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // ========== MOBILE MENU WITH DARK MODE TOGGLE INSIDE ==========
+  // ========== MOBILE MENU ==========
   function initMobileMenu() {
-    // Check if elements already exist to avoid duplicates
     if (document.querySelector('.mobile-menu-overlay')) return;
 
-    const nav = document.querySelector('.nav');
     const mobileBtn = document.getElementById('mobileMenuBtn');
     if (!mobileBtn) return;
 
@@ -16,24 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(backdrop);
     document.body.appendChild(overlay);
 
-    // Copy navigation links from .nav-menu
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-      const clone = link.cloneNode(true);
-      overlay.appendChild(clone);
-    });
+    // Clone all .nav-menu items (including the dark mode toggle)
+    const navMenu = document.querySelector('.nav-menu');
+    if (navMenu) {
+      const items = navMenu.querySelectorAll('li');
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        overlay.appendChild(clone);
+      });
+    }
 
-    // Add dark mode toggle inside mobile menu
-    const mobileDarkToggle = document.createElement('button');
-    mobileDarkToggle.className = 'mobile-dark-toggle';
-    const icon = document.createElement('i');
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
-    mobileDarkToggle.appendChild(icon);
-    mobileDarkToggle.appendChild(document.createTextNode(' Dark Mode'));
-    overlay.appendChild(mobileDarkToggle);
-
-    // Toggle mobile menu
+    // Toggle menu
     mobileBtn.addEventListener('click', () => {
       overlay.classList.toggle('active');
       backdrop.classList.toggle('active');
@@ -45,96 +36,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close menu when a link is clicked
-    overlay.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    overlay.querySelectorAll('a, .dark-mode-toggle-link').forEach(el => {
+      el.addEventListener('click', () => {
         overlay.classList.remove('active');
         backdrop.classList.remove('active');
       });
     });
-
-    // Dark mode toggle from mobile menu
-    mobileDarkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDark);
-      const iconElem = mobileDarkToggle.querySelector('i');
-      if (isDark) {
-        iconElem.classList.remove('fa-moon');
-        iconElem.classList.add('fa-sun');
-      } else {
-        iconElem.classList.remove('fa-sun');
-        iconElem.classList.add('fa-moon');
-      }
-      // Also update desktop dark toggle if exists
-      const desktopToggle = document.querySelector('.desktop-dark-toggle');
-      if (desktopToggle) {
-        const deskIcon = desktopToggle.querySelector('i');
-        if (isDark) {
-          deskIcon.classList.remove('fa-moon');
-          deskIcon.classList.add('fa-sun');
-        } else {
-          deskIcon.classList.remove('fa-sun');
-          deskIcon.classList.add('fa-moon');
-        }
-      }
-    });
   }
 
-  // ========== DESKTOP DARK MODE TOGGLE ==========
-  function initDesktopDarkToggle() {
-    if (window.innerWidth <= 768) return;
-    let desktopToggle = document.querySelector('.desktop-dark-toggle');
-    if (desktopToggle) return;
+  // ========== SINGLE DARK MODE TOGGLE ==========
+  function initDarkMode() {
+    // Check if toggle already exists
+    if (document.querySelector('.dark-mode-toggle-link')) return;
 
-    const nav = document.querySelector('.nav');
-    desktopToggle = document.createElement('button');
-    desktopToggle.className = 'desktop-dark-toggle';
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    const navMenu = document.querySelector('.nav-menu');
+    if (!navMenu) return;
+
+    // Create list item for dark mode toggle
+    const li = document.createElement('li');
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'dark-mode-toggle-link';
     const icon = document.createElement('i');
-    icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
-    desktopToggle.appendChild(icon);
-    nav.appendChild(desktopToggle);
+    const isDark = localStorage.getItem('darkMode') === 'true';
+    icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    toggleBtn.appendChild(icon);
+    toggleBtn.appendChild(document.createTextNode(' Dark Mode'));
+    li.appendChild(toggleBtn);
+    navMenu.appendChild(li);
 
-    desktopToggle.addEventListener('click', () => {
+    // Apply saved dark mode
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+    }
+
+    // Toggle event
+    toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDark);
-      const iconElem = desktopToggle.querySelector('i');
-      if (isDark) {
-        iconElem.classList.remove('fa-moon');
-        iconElem.classList.add('fa-sun');
-      } else {
-        iconElem.classList.remove('fa-sun');
-        iconElem.classList.add('fa-moon');
-      }
-      // Also update mobile dark toggle if exists
-      const mobileToggle = document.querySelector('.mobile-dark-toggle');
-      if (mobileToggle) {
-        const mobIcon = mobileToggle.querySelector('i');
-        if (isDark) {
-          mobIcon.classList.remove('fa-moon');
-          mobIcon.classList.add('fa-sun');
-        } else {
-          mobIcon.classList.remove('fa-sun');
-          mobIcon.classList.add('fa-moon');
-        }
-      }
+      const darkModeOn = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', darkModeOn);
+      const newIcon = darkModeOn ? 'fas fa-sun' : 'fas fa-moon';
+      toggleBtn.querySelector('i').className = newIcon;
     });
   }
 
-  // Apply saved dark mode on load
-  function applySavedDarkMode() {
-    if (localStorage.getItem('darkMode') === 'true') {
-      document.body.classList.add('dark-mode');
-      const allToggles = document.querySelectorAll('.desktop-dark-toggle i, .mobile-dark-toggle i');
-      allToggles.forEach(icon => {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      });
-    }
-  }
-
-  // ========== HERO SLIDESHOW (auto-rotate) ==========
+  // ========== HERO SLIDESHOW ==========
   function initSlideshow() {
     const slides = document.querySelectorAll('.slide-hero');
     const dotsContainer = document.getElementById('dotsHero');
@@ -218,10 +163,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initialize all components
+  // Run all
+  initDarkMode();
   initMobileMenu();
-  initDesktopDarkToggle();
-  applySavedDarkMode();
   initSlideshow();
   initFaq();
   initContactForm();
