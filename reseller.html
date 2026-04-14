@@ -13,7 +13,7 @@
 <body>
 <header class="header">
   <div class="nav">
-    <a href="index.html" class="logo">OTT<span style="color:#3b82f6;">Distributor</span></a>
+    <a href="index.html" class="logo"><span>OTT<span style="color:#3b82f6;">Distributor</span></span></a>
     <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">🏠 Home</a></li>
@@ -23,20 +23,26 @@
       <li><a href="faq.html">❓ FAQ</a></li>
       <li><a href="contact.html">📞 Contact</a></li>
     </ul>
-    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
   </div>
 </header>
+
+<div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+<div id="menuBackdrop" class="menu-backdrop"></div>
+
 <div class="info-banner">
   <h2>👑 Wholesale Reseller Plans</h2>
   <p>Buy credits in bulk and sell subscriptions at your own price. Profit margins up to 300%.</p>
 </div>
+
 <div class="container">
   <div class="panels-grid" id="resellerGrid"></div>
 </div>
+
 <footer>
   <div class="official-text"><i class="fas fa-check-circle"></i> OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.</div>
   <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform.</p>
 </footer>
+
 <script src="panels-data.js"></script>
 <script>
   function createResellerCard(p) {
@@ -44,7 +50,10 @@
     const trialMsg = `Hello, I would like to request a FREE TRIAL / demo access for the reseller panel of ${p.name}. Please provide access. Thank you!`;
     return `<div class="panel-card"><div class="card-header"><h3>${p.name} <span class="rating">⭐ ${p.rating}</span></h3></div><div class="card-body"><div class="stats"><span>📺 ${p.channels}</span><span>🎬 ${p.movies}</span>${p.series !== "0" ? `<span>📺 ${p.series}</span>` : ''}</div><div class="description">${p.description}</div><ul class="features"><li><i class="fas fa-check"></i> <strong>${p.resellerCredits}</strong> wholesale credits</li><li><i class="fas fa-check"></i> Creates <strong>${subsCount}</strong> x 1-year subscriptions</li><li><i class="fas fa-check"></i> Free reseller dashboard + API</li><li><i class="fas fa-check"></i> 24/7 priority support</li></ul><div class="price">${p.resellerPrice} <small>/ wholesale pack</small></div><div class="btn-group"><a href="https://wa.me/212670969192?text=${encodeURIComponent(trialMsg)}" target="_blank" class="btn-trial"><i class="fas fa-gift"></i> Free Trial</a><a href="https://wa.me/212670969192?text=Hello%2C%20I%20want%20to%20become%20a%20reseller%20for%20${encodeURIComponent(p.name)}.%20Reseller%20pack%3A%20${encodeURIComponent(p.resellerCredits)}%20for%20${encodeURIComponent(p.resellerPrice)}.%20Please%20send%20details." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://t.me/OTTDistributor?text=Hello%2C%20I%20want%20to%20become%20a%20reseller%20for%20${encodeURIComponent(p.name)}.%20Reseller%20pack%3A%20${encodeURIComponent(p.resellerCredits)}%20for%20${encodeURIComponent(p.resellerPrice)}." target="_blank" class="btn-tg"><i class="fab fa-telegram"></i> Telegram</a></div></div></div>`;
   }
-  document.getElementById('resellerGrid').innerHTML = panels.map(p => createResellerCard(p)).join('');
+  const resellerGrid = document.getElementById('resellerGrid');
+  if (resellerGrid && typeof panels !== 'undefined') {
+    resellerGrid.innerHTML = panels.map(p => createResellerCard(p)).join('');
+  }
 </script>
 </body>
 </html>
