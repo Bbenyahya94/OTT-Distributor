@@ -67,12 +67,12 @@ body.dark-mode .logo {
   background-clip: text;
 }
 
-/* Desktop navigation menu */
 .nav-menu {
   display: flex;
   gap: 20px;
   list-style: none;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .nav-menu a {
@@ -81,6 +81,7 @@ body.dark-mode .logo {
   font-weight: 500;
   transition: color 0.2s;
   font-size: 0.95rem;
+  cursor: pointer;
 }
 
 body.dark-mode .nav-menu a {
@@ -90,6 +91,18 @@ body.dark-mode .nav-menu a {
 .nav-menu a:hover,
 .nav-menu a.active {
   color: #2563eb;
+}
+
+/* Dark mode toggle as a menu item */
+.dark-mode-toggle-link {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
 }
 
 /* Mobile menu button */
@@ -104,30 +117,6 @@ body.dark-mode .nav-menu a {
 
 body.dark-mode .mobile-menu-btn {
   color: #cbd5e1;
-}
-
-/* Desktop dark mode toggle (visible only on desktop) */
-.desktop-dark-toggle {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  color: #1e293b;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background 0.2s;
-}
-
-body.dark-mode .desktop-dark-toggle {
-  color: #facc15;
-}
-
-.desktop-dark-toggle:hover {
-  background: #e2e8f0;
-}
-
-body.dark-mode .desktop-dark-toggle:hover {
-  background: #334155;
 }
 
 /* Mobile slide-out menu */
@@ -173,24 +162,17 @@ body.dark-mode .mobile-menu-overlay a {
   color: #2563eb;
 }
 
-.mobile-dark-toggle {
+.mobile-menu-overlay .dark-mode-toggle-link {
   background: none;
-  border: 1px solid #cbd5e1;
-  border-radius: 40px;
-  padding: 10px 16px;
-  font-size: 1rem;
-  cursor: pointer;
+  border: none;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  width: 100%;
+  text-align: left;
   display: flex;
   align-items: center;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 20px;
-  width: 100%;
-}
-
-body.dark-mode .mobile-dark-toggle {
-  border-color: #475569;
-  color: #facc15;
+  gap: 10px;
+  cursor: pointer;
 }
 
 /* Backdrop when menu is open */
@@ -211,21 +193,17 @@ body.dark-mode .mobile-dark-toggle {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-  }
   .mobile-menu-btn {
     display: block;
   }
-  .desktop-dark-toggle {
+  .nav-menu {
     display: none;
   }
 }
 
 @media (min-width: 769px) {
   .mobile-menu-overlay,
-  .menu-backdrop,
-  .mobile-dark-toggle {
+  .menu-backdrop {
     display: none;
   }
 }
