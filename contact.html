@@ -13,7 +13,7 @@
 <body>
 <header class="header">
   <div class="nav">
-    <a href="index.html" class="logo">OTT<span style="color:#3b82f6;">Distributor</span></a>
+    <a href="index.html" class="logo"><span>OTT<span style="color:#3b82f6;">Distributor</span></span></a>
     <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">🏠 Home</a></li>
@@ -23,13 +23,17 @@
       <li><a href="faq.html">❓ FAQ</a></li>
       <li><a href="contact.html" class="active">📞 Contact</a></li>
     </ul>
-    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
   </div>
 </header>
+
+<div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+<div id="menuBackdrop" class="menu-backdrop"></div>
+
 <div class="info-banner">
   <h2>📞 Contact Us</h2>
   <p>Get in touch with our support team. We're here 24/7 to help you.</p>
 </div>
+
 <div class="container">
   <div class="contact-card">
     <div class="contact-info">
@@ -46,6 +50,7 @@
     <div id="contactFormMessage" style="margin-top:16px; text-align:center;"></div>
   </div>
 </div>
+
 <footer>
   <div class="official-text"><i class="fas fa-check-circle"></i> OTT Distributor — Official Reseller for Trex, 8K Strong, Dino, Lion, Crystal, Magnum, Dream 4K, Eagle, ProMax, Tivione, Mega, Infinity, Max, Nexon.</div>
   <p>© 2025 OTT Distributor — IPTV Reseller & IPTV Subscription Platform.</p>
